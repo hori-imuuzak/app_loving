@@ -29,17 +29,17 @@ struct ProfileItemRow: View {
                                 .foregroundColor(Color.black)
                             if !hint.isEmpty {
                                 Text(self.hint)
-                                    .font(.system(size: 12))
+                                    .font(.system(size: Const.FontSize.S))
                                     .foregroundColor(Color.gray)
-                                    .padding(.top, 4)
+                                    .padding(.top, Const.Padding.S)
                             }
                         }
                         Spacer()
                         Text(self.text)
                         .foregroundColor(Color.black)
                     }
-                    .padding(.vertical, 8)
-                    .padding(.horizontal, 16)
+                    .padding(.vertical, Const.Padding.M)
+                    .padding(.horizontal, Const.Padding.L)
                     .frame(maxWidth: .infinity)
                 }
             }

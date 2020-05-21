@@ -16,12 +16,16 @@ struct HomeView: View {
                     Image(systemName: "phone.fill")
                     Text("Todays")
             }
-            Text("パートナー")
+            PartnerList(partners: [
+                PartnerItem(id: 1, name: "旦那さん"),
+                PartnerItem(id: 2, name: "ママ"),
+                PartnerItem(id: 3, name: "息子ちゃん")
+            ])
                 .tabItem {
                     Image(systemName: "phone.fill")
                     Text("Partners")
             }
-            Text("リクエスト")
+            RequestList()
                 .tabItem {
                     Image(systemName: "phone.fill")
                     Text("Requests")

@@ -48,9 +48,9 @@ struct Account: View {
                         .foregroundColor(Color.white)
                     Button(action: {}) {
                         Text("名前を変更する")
-                            .font(.system(size: 12))
+                            .font(.system(size: Const.FontSize.S))
                             .foregroundColor(Color.white)
-                    }.padding(.top, 4)
+                    }.padding(.top, Const.Padding.S)
                 }
             }
         }
