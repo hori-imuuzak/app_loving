@@ -17,9 +17,9 @@ struct HomeView: View {
                     Text("Todays")
             }
             PartnerList(partners: [
-                PartnerItem(id: 1, name: "旦那さん"),
-                PartnerItem(id: 2, name: "ママ"),
-                PartnerItem(id: 3, name: "息子ちゃん")
+                PartnerItem(name: "旦那さん"),
+                PartnerItem(name: "ママ"),
+                PartnerItem(name: "息子ちゃん")
             ])
                 .tabItem {
                     Image(systemName: "phone.fill")

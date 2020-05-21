@@ -18,23 +18,21 @@ struct RequestItem: View {
     let request: Request
 
     var body: some View {
-        Button(action: {}) {
-            ZStack {
-                Image(request.image)
-                    .resizable()
-                    .scaledToFill()
-                Text(request.text)
-                    .fontWeight(.bold)
-                    .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
-                    .font(.system(size: Const.FontSize.M))
-                    .padding(Const.Padding.M)
-                    .foregroundColor(Color.white)
-                    .lineLimit(3)
-                    .frame(width: 120)
-            }
-            .frame(width: 120, height: 120)
-            .clipped()
-        }.buttonStyle(PlainButtonStyle())
+        ZStack {
+            Image(request.image)
+                .resizable()
+                .scaledToFill()
+            Text(request.text)
+                .fontWeight(.bold)
+                .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
+                .font(.system(size: Const.FontSize.M))
+                .padding(Const.Padding.M)
+                .foregroundColor(Color.white)
+                .lineLimit(3)
+                .frame(width: 120)
+        }
+        .frame(width: 120, height: 120)
+        .clipped()
     }
 }
 

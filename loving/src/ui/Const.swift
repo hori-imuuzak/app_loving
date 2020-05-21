@@ -19,5 +19,6 @@ class Const {
     class FontSize {
         static let S: CGFloat = 12
         static let M: CGFloat = 14
+        static let L: CGFloat = 18
     }
 }

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct PartnerList: View {
+struct RequestTo: View {
     init(partners: [PartnerItem]) {
         self.partners = partners
 
@@ -18,22 +18,22 @@ struct PartnerList: View {
     var partners: [PartnerItem] = []
     var body: some View {
         NavigationView {
-            List(partners) { partner in
-                PartnerItemRow(name: partner.name)
-            }
-            .navigationBarTitle(Text("パートナー"))
-            .navigationBarItems(trailing:
-                Button(action: {}) {
-                    Image(systemName: "plus")
+            VStack {
+                Text("誰にリクエストしますか？")
+                    .font(.system(size: Const.FontSize.L))
+                List(partners) { partner in
+                    PartnerItemRow(name: partner.name)
                 }
-            )
+            }
+            .navigationBarTitle("")
+            .navigationBarHidden(true)
         }
     }
 }
 
-struct PartnerList_Previews: PreviewProvider {
+struct RequestTo_Previews: PreviewProvider {
     static var previews: some View {
-        PartnerList(partners: [
+        RequestTo(partners: [
             PartnerItem(name: "旦那さん"),
             PartnerItem(name: "ママ"),
             PartnerItem(name: "息子ちゃん")

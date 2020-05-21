@@ -34,7 +34,15 @@ struct RequestList: View {
     var body: some View {
         NavigationView {
             QGrid(requests, columns: 3, vSpacing: 4, hSpacing: 18) { request in
-                RequestItem(request: request)
+                NavigationLink(destination: RequestTo(partners: [
+                        // TODO
+                        PartnerItem(name: "旦那さん"),
+                        PartnerItem(name: "ママ"),
+                        PartnerItem(name: "息子ちゃん")
+                    ])
+                ) {
+                    RequestItem(request: request)
+                }.buttonStyle(PlainButtonStyle())
             }
             .navigationBarTitle(Text("リクエストを送る"))
             

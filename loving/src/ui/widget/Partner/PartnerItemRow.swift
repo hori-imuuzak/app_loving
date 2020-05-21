@@ -9,6 +9,11 @@
 import SwiftUI
 import URLImage
 
+struct PartnerItem: Identifiable {
+    let id = UUID()
+    let name: String
+}
+
 struct PartnerItemRow: View {
     var name: String
     var message: String = ""
