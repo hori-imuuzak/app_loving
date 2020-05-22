@@ -8,12 +8,19 @@
 
 import SwiftUI
 
+extension Identifiable where Self: Hashable {
+    typealias ID = Self
+    var id: Self { self }
+}
+
 struct PartnerList: View {
     init(partners: [PartnerItem]) {
         self.partners = partners
 
         UITableView.appearance().separatorStyle = .none
     }
+    
+    @State private var isShowAddPartnerView = false
 
     var partners: [PartnerItem] = []
     var body: some View {
@@ -23,11 +30,20 @@ struct PartnerList: View {
             }
             .navigationBarTitle(Text("パートナー"))
             .navigationBarItems(trailing:
-                Button(action: {}) {
+                Button(action: self.onClickAdd) {
                     Image(systemName: "plus")
+                }
+                .sheet(isPresented: self.$isShowAddPartnerView) {
+                    AddPartner(addPartner: {
+                        self.isShowAddPartnerView.toggle()
+                    })
                 }
             )
         }
+    }
+    
+    private func onClickAdd() {
+        self.isShowAddPartnerView.toggle()
     }
 }
 
