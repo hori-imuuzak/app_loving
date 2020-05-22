@@ -16,9 +16,11 @@ struct AddPartner: View {
     var body: some View {
         VStack {
             VStack(alignment: .leading) {
+                Text("パートナーの追加").font(.title)
                 Text("PartnerIDを利用して、追加したいパートナーを検索することができます。")
                     .font(.system(size: Const.FontSize.L))
                     .lineLimit(nil)
+                    .padding(.top, Const.Padding.M)
                     .fixedSize(horizontal: false, vertical: true)
                 Text("PartnerIDは、設定画面で確認できます。")
                     .font(.system(size: Const.FontSize.S))
@@ -26,10 +28,12 @@ struct AddPartner: View {
                     .padding(.top, Const.Padding.S)
             }
             TextField("PartnerIDを入力してください", text: $inputPartnerId)
-                .padding(.top, Const.Padding.M)
             Button("検索") {
                 // TODO mock
+                // toggle()微妙
                 self.isFoundPartner.toggle()
+                self.inputPartnerId = ""
+                UIApplication.shared.endEditing()
             }.padding(.top, Const.Padding.M)
             if self.isFoundPartner {
                 VStack {
@@ -39,7 +43,10 @@ struct AddPartner: View {
                     }.padding(.top, Const.Padding.M)
                 }.padding(.top, Const.Padding.L)
             }
-        }.padding(.horizontal, Const.Padding.M)
+            Spacer()
+        }
+        .padding(.vertical, 120)
+        .padding(.horizontal, Const.Padding.M)
     }
 }
 

@@ -13,27 +13,31 @@ struct HomeView: View {
         TabView {
             Text("本日のリクエスト")
                 .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Todays")
-            }
+                    Image("today")
+                        .renderingMode(.template)
+                    Text("本日のリクエスト")
+                }
             PartnerList(partners: [
                 PartnerItem(name: "旦那さん"),
                 PartnerItem(name: "ママ"),
                 PartnerItem(name: "息子ちゃん")
             ])
                 .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Partners")
+                    Image("father")
+                        .renderingMode(.template)
+                    Text("パートナー")
             }
             RequestList()
                 .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Requests")
+                    Image("pray")
+                        .renderingMode(.template)
+                    Text("リクエスト")
             }
             ProfileView()
                 .tabItem {
-                    Image(systemName: "phone.fill")
-                    Text("Settings")
+                    Image("settings")
+                        .renderingMode(.template)
+                    Text("設定")
             }
         }
     }
