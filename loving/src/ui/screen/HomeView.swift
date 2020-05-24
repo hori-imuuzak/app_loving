@@ -11,7 +11,7 @@ import SwiftUI
 struct HomeView: View {
     var body: some View {
         TabView {
-            Text("本日のリクエスト")
+            CardStack()
                 .tabItem {
                     Image("today")
                         .renderingMode(.template)

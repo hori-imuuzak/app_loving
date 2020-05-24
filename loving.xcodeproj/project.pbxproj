@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		16D8452DFFCE9B81D1FBA635 /* Pods_loving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375931637189A21B2477C4FB /* Pods_loving.framework */; };
+		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
+		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75D4D85A24741440003295CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85924741440003295CF /* AppDelegate.swift */; };
 		75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85B24741440003295CF /* SceneDelegate.swift */; };
 		75D4D85E24741440003295CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85D24741440003295CF /* HomeView.swift */; };
@@ -30,6 +32,8 @@
 
 /* Begin PBXFileReference section */
 		375931637189A21B2477C4FB /* Pods_loving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
+		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75D4D85624741440003295CF /* loving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4D85924741440003295CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4D85B24741440003295CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 				FF85B3DA459D09BCCBED7838 /* Pods-loving.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		75A79BCB247A3A8B00E3E23F /* Today */ = {
+			isa = PBXGroup;
+			children = (
+				75A79BCC247A3AE400E3E23F /* TodayCard.swift */,
+				75A79BCE247A403A00E3E23F /* CardStack.swift */,
+			);
+			path = Today;
 			sourceTree = "<group>";
 		};
 		75D4D84D24741440003295CF = {
@@ -146,6 +159,7 @@
 		75D4D870247419EC003295CF /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				75A79BCB247A3A8B00E3E23F /* Today */,
 				75D4D88124772155003295CF /* Request */,
 				75D4D87A24760317003295CF /* Partner */,
 				75D4D87324743CEE003295CF /* Profile */,
@@ -310,12 +324,14 @@
 				75D4D88524772A02003295CF /* RequestList.swift in Sources */,
 				75D4D87524743D0A003295CF /* ProfileItemRow.swift in Sources */,
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
+				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
 				75D4D85A24741440003295CF /* AppDelegate.swift in Sources */,
 				75D4D87724744425003295CF /* ProfileContent.swift in Sources */,
 				75D4D88324772187003295CF /* RequestItem.swift in Sources */,
 				75D4D88A24773E61003295CF /* RequestTo.swift in Sources */,
 				75D4D88C247742AF003295CF /* AddPartner.swift in Sources */,
 				75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */,
+				75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */,
 				75D4D8802476B96D003295CF /* PartnerList.swift in Sources */,
 				75D4D87924744D1D003295CF /* ProfileAccount.swift in Sources */,
 				75D4D85E24741440003295CF /* HomeView.swift in Sources */,
