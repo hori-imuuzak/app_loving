@@ -8,14 +8,14 @@
 
 import SwiftUI
 
-struct Request: Identifiable {
+struct RequestData: Identifiable {
     let id = UUID()
     let image: String
     let text: String
 }
 
 struct RequestItem: View {
-    let request: Request
+    let request: RequestData
 
     var body: some View {
         ZStack {
@@ -38,7 +38,7 @@ struct RequestItem: View {
 
 struct RequestItem_Previews: PreviewProvider {
     static var previews: some View {
-        RequestItem(request: Request(
+        RequestItem(request: RequestData(
             image: "pocket_money",
             text: "おこづかいが\nほしい"
         ))

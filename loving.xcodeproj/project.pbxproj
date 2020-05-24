@@ -11,6 +11,17 @@
 		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
 		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75A79BD1247A63F000E3E23F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BD0247A63F000E3E23F /* SplashView.swift */; };
+		75A79BE2247A715700E3E23F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BE1247A715700E3E23F /* User.swift */; };
+		75A79BE4247A716600E3E23F /* Partner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BE3247A716600E3E23F /* Partner.swift */; };
+		75A79BE6247A742700E3E23F /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BE5247A742700E3E23F /* Request.swift */; };
+		75A79BE8247A75B800E3E23F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BE7247A75B800E3E23F /* PostRequest.swift */; };
+		75A79BEA247A769500E3E23F /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BE9247A769500E3E23F /* Message.swift */; };
+		75A79BEC247A771100E3E23F /* UniqueIdableIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BEB247A771100E3E23F /* UniqueIdableIdentifiable.swift */; };
+		75A79BF0247A779E00E3E23F /* RequestStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BEF247A779E00E3E23F /* RequestStatus.swift */; };
+		75A79BF2247A785300E3E23F /* TextMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BF1247A785300E3E23F /* TextMessage.swift */; };
+		75A79BF4247A788800E3E23F /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BF3247A788800E3E23F /* ImageMessage.swift */; };
+		75A79BF6247A796800E3E23F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A79BF5247A796800E3E23F /* GoogleService-Info.plist */; };
+		75A79BF8247A79CE00E3E23F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75A79BF7247A79CE00E3E23F /* .gitignore */; };
 		75D4D85A24741440003295CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85924741440003295CF /* AppDelegate.swift */; };
 		75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85B24741440003295CF /* SceneDelegate.swift */; };
 		75D4D85E24741440003295CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85D24741440003295CF /* HomeView.swift */; };
@@ -36,6 +47,17 @@
 		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
 		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75A79BD0247A63F000E3E23F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		75A79BE1247A715700E3E23F /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		75A79BE3247A716600E3E23F /* Partner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Partner.swift; sourceTree = "<group>"; };
+		75A79BE5247A742700E3E23F /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		75A79BE7247A75B800E3E23F /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		75A79BE9247A769500E3E23F /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		75A79BEB247A771100E3E23F /* UniqueIdableIdentifiable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniqueIdableIdentifiable.swift; sourceTree = "<group>"; };
+		75A79BEF247A779E00E3E23F /* RequestStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestStatus.swift; sourceTree = "<group>"; };
+		75A79BF1247A785300E3E23F /* TextMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextMessage.swift; sourceTree = "<group>"; };
+		75A79BF3247A788800E3E23F /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
+		75A79BF5247A796800E3E23F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75A79BF7247A79CE00E3E23F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		75D4D85624741440003295CF /* loving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4D85924741440003295CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4D85B24741440003295CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,9 +112,72 @@
 			path = Today;
 			sourceTree = "<group>";
 		};
+		75A79BDC247A70F300E3E23F /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				75A79BDE247A70FD00E3E23F /* repository */,
+				75A79BDD247A70F800E3E23F /* model */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		75A79BDD247A70F800E3E23F /* model */ = {
+			isa = PBXGroup;
+			children = (
+				75A79BEE247A778D00E3E23F /* entity */,
+				75A79BED247A778400E3E23F /* data */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		75A79BDE247A70FD00E3E23F /* repository */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		75A79BDF247A710500E3E23F /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+		75A79BE0247A710D00E3E23F /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = infrastructure;
+			sourceTree = "<group>";
+		};
+		75A79BED247A778400E3E23F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				75A79BEB247A771100E3E23F /* UniqueIdableIdentifiable.swift */,
+				75A79BEF247A779E00E3E23F /* RequestStatus.swift */,
+				75A79BF1247A785300E3E23F /* TextMessage.swift */,
+				75A79BF3247A788800E3E23F /* ImageMessage.swift */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		75A79BEE247A778D00E3E23F /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				75A79BE1247A715700E3E23F /* User.swift */,
+				75A79BE3247A716600E3E23F /* Partner.swift */,
+				75A79BE5247A742700E3E23F /* Request.swift */,
+				75A79BE7247A75B800E3E23F /* PostRequest.swift */,
+				75A79BE9247A769500E3E23F /* Message.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
 		75D4D84D24741440003295CF = {
 			isa = PBXGroup;
 			children = (
+				75A79BF7247A79CE00E3E23F /* .gitignore */,
 				75D4D85824741440003295CF /* loving */,
 				75D4D85724741440003295CF /* Products */,
 				0525109DC9260CD83DB5DC85 /* Pods */,
@@ -115,6 +200,7 @@
 				75D4D85F24741446003295CF /* Assets.xcassets */,
 				75D4D86424741446003295CF /* LaunchScreen.storyboard */,
 				75D4D86724741446003295CF /* Info.plist */,
+				75A79BF5247A796800E3E23F /* GoogleService-Info.plist */,
 				75D4D86124741446003295CF /* Preview Content */,
 			);
 			path = loving;
@@ -131,6 +217,9 @@
 		75D4D86D247414CE003295CF /* src */ = {
 			isa = PBXGroup;
 			children = (
+				75A79BE0247A710D00E3E23F /* infrastructure */,
+				75A79BDF247A710500E3E23F /* viewmodel */,
+				75A79BDC247A70F300E3E23F /* domain */,
 				75D4D86E247414E0003295CF /* ui */,
 				75D4D85924741440003295CF /* AppDelegate.swift */,
 				75D4D85B24741440003295CF /* SceneDelegate.swift */,
@@ -268,7 +357,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A79BF8247A79CE00E3E23F /* .gitignore in Resources */,
 				75D4D86624741446003295CF /* LaunchScreen.storyboard in Resources */,
+				75A79BF6247A796800E3E23F /* GoogleService-Info.plist in Resources */,
 				75D4D86324741446003295CF /* Preview Assets.xcassets in Resources */,
 				75D4D86024741446003295CF /* Assets.xcassets in Resources */,
 			);
@@ -324,9 +415,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D4D87224741A8F003295CF /* ProfileView.swift in Sources */,
+				75A79BEC247A771100E3E23F /* UniqueIdableIdentifiable.swift in Sources */,
+				75A79BEA247A769500E3E23F /* Message.swift in Sources */,
+				75A79BE8247A75B800E3E23F /* PostRequest.swift in Sources */,
 				75D4D88524772A02003295CF /* RequestList.swift in Sources */,
+				75A79BF4247A788800E3E23F /* ImageMessage.swift in Sources */,
 				75D4D87524743D0A003295CF /* ProfileItemRow.swift in Sources */,
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
+				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
 				75D4D85A24741440003295CF /* AppDelegate.swift in Sources */,
 				75D4D87724744425003295CF /* ProfileContent.swift in Sources */,
@@ -335,12 +431,16 @@
 				75D4D88C247742AF003295CF /* AddPartner.swift in Sources */,
 				75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */,
 				75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */,
+				75A79BE4247A716600E3E23F /* Partner.swift in Sources */,
+				75A79BF0247A779E00E3E23F /* RequestStatus.swift in Sources */,
 				75D4D8802476B96D003295CF /* PartnerList.swift in Sources */,
 				75D4D87924744D1D003295CF /* ProfileAccount.swift in Sources */,
 				75D4D85E24741440003295CF /* HomeView.swift in Sources */,
 				75D4D88E24776049003295CF /* UIApplication_ext.swift in Sources */,
 				75D4D87E24760EA9003295CF /* Const.swift in Sources */,
+				75A79BF2247A785300E3E23F /* TextMessage.swift in Sources */,
 				75A79BD1247A63F000E3E23F /* SplashView.swift in Sources */,
+				75A79BE2247A715700E3E23F /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

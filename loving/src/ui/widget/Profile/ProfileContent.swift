@@ -21,7 +21,7 @@ struct ProfileContent: View {
                 hint: "プロフィールの背景画像を変更できます"
             )
             ProfileItemRow(
-                label: "誕生日",
+                label: "ひとこと",
                 text: "未設定"
             )
             ProfileItemRow(

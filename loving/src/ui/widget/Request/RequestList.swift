@@ -16,19 +16,19 @@ struct Row: Identifiable {
 
 struct RequestList: View {
     let requests = [
-        Request(image: "date", text: "お出かけしたい"),
-        Request(image: "cooking", text: "料理をしてほしい"),
-        Request(image: "shopping", text: "買い物してほしい"),
-        Request(image: "movie", text: "映画をみたい"),
-        Request(image: "drive", text: "ドライブに\n行きたい"),
-        Request(image: "pocket_money", text: "おこづかいが\nほしい"),
-        Request(image: "clean_up", text: "片付けをお願い"),
-        Request(image: "sports", text: "一緒に運動したい"),
-        Request(image: "wake_up", text: "起こしてほしい"),
-        Request(image: "bathing", text: "お風呂をためてほしい"),
-        Request(image: "messenger", text: "電話やメッセージしたい"),
-        Request(image: "work", text: "お仕事がんばって！"),
-        Request(image: "custom_request", text: "その他のリクエスト"),
+        RequestData(image: "date", text: "お出かけしたい"),
+        RequestData(image: "cooking", text: "料理をしてほしい"),
+        RequestData(image: "shopping", text: "買い物してほしい"),
+        RequestData(image: "movie", text: "映画をみたい"),
+        RequestData(image: "drive", text: "ドライブに\n行きたい"),
+        RequestData(image: "pocket_money", text: "おこづかいが\nほしい"),
+        RequestData(image: "clean_up", text: "片付けをお願い"),
+        RequestData(image: "sports", text: "一緒に運動したい"),
+        RequestData(image: "wake_up", text: "起こしてほしい"),
+        RequestData(image: "bathing", text: "お風呂をためてほしい"),
+        RequestData(image: "messenger", text: "電話やメッセージしたい"),
+        RequestData(image: "work", text: "お仕事がんばって！"),
+        RequestData(image: "custom_request", text: "その他のリクエスト"),
     ]
     
     var body: some View {
