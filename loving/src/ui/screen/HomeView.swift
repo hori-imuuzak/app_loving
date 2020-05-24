@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct HomeView: View {
     @State private var isActive = false
@@ -19,7 +20,11 @@ struct HomeView: View {
                 SplashView()
             }
         }.onAppear(perform: {
-            self.hideSplash(delay: 2.5)
+            Auth.auth().signInAnonymously { _, error in
+                if error == nil {
+                    self.hideSplash(delay: 2.5)
+                }
+            }
         })
     }
     
