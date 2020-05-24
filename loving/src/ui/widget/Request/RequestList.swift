@@ -33,7 +33,7 @@ struct RequestList: View {
     
     var body: some View {
         NavigationView {
-            QGrid(requests, columns: 3, vSpacing: 4, hSpacing: 18) { request in
+            QGrid(requests, columns: 3, vSpacing: 4, hSpacing: 18, vPadding: 0) { request in
                 NavigationLink(destination: RequestTo(partners: [
                         // TODO
                         PartnerItem(name: "旦那さん"),

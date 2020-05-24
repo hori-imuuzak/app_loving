@@ -7,6 +7,7 @@ target 'loving' do
 
   # Pods for loving
   pod 'URLImage'
+  pod 'RxSwift'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Firebase/Storage'

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -22,6 +22,12 @@
 		75A79BF4247A788800E3E23F /* ImageMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BF3247A788800E3E23F /* ImageMessage.swift */; };
 		75A79BF8247A79CE00E3E23F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 75A79BF7247A79CE00E3E23F /* .gitignore */; };
 		75A79BFC247A7D8900E3E23F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 75A79BFB247A7D8900E3E23F /* GoogleService-Info.plist */; };
+		75A79C01247A900C00E3E23F /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C00247A900B00E3E23F /* UserRepository.swift */; };
+		75A79C04247A92A100E3E23F /* QGrid in Frameworks */ = {isa = PBXBuildFile; productRef = 75A79C03247A92A100E3E23F /* QGrid */; };
+		75A79C06247A9CB800E3E23F /* FirebaseUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C05247A9CB800E3E23F /* FirebaseUserRepository.swift */; };
+		75A79C0A247A9E3F00E3E23F /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */; };
+		75A79C0C247AA48600E3E23F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */; };
+		75A79C0E247AB64600E3E23F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C0D247AB64600E3E23F /* HomeViewModel.swift */; };
 		75D4D85A24741440003295CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85924741440003295CF /* AppDelegate.swift */; };
 		75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85B24741440003295CF /* SceneDelegate.swift */; };
 		75D4D85E24741440003295CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85D24741440003295CF /* HomeView.swift */; };
@@ -58,6 +64,11 @@
 		75A79BF3247A788800E3E23F /* ImageMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageMessage.swift; sourceTree = "<group>"; };
 		75A79BF7247A79CE00E3E23F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		75A79BFB247A7D8900E3E23F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		75A79C00247A900B00E3E23F /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		75A79C05247A9CB800E3E23F /* FirebaseUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUserRepository.swift; sourceTree = "<group>"; };
+		75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		75A79C0D247AB64600E3E23F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		75D4D85624741440003295CF /* loving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4D85924741440003295CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4D85B24741440003295CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75A79C04247A92A100E3E23F /* QGrid in Frameworks */,
 				16D8452DFFCE9B81D1FBA635 /* Pods_loving.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -133,6 +145,7 @@
 		75A79BDE247A70FD00E3E23F /* repository */ = {
 			isa = PBXGroup;
 			children = (
+				75A79C00247A900B00E3E23F /* UserRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -140,6 +153,8 @@
 		75A79BDF247A710500E3E23F /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */,
+				75A79C0D247AB64600E3E23F /* HomeViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -147,6 +162,8 @@
 		75A79BE0247A710D00E3E23F /* infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				75A79C07247A9E2900E3E23F /* entity */,
+				75A79C05247A9CB800E3E23F /* FirebaseUserRepository.swift */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -170,6 +187,14 @@
 				75A79BE5247A742700E3E23F /* Request.swift */,
 				75A79BE7247A75B800E3E23F /* PostRequest.swift */,
 				75A79BE9247A769500E3E23F /* Message.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		75A79C07247A9E2900E3E23F /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -315,6 +340,9 @@
 			dependencies = (
 			);
 			name = loving;
+			packageProductDependencies = (
+				75A79C03247A92A100E3E23F /* QGrid */,
+			);
 			productName = loving;
 			productReference = 75D4D85624741440003295CF /* loving.app */;
 			productType = "com.apple.product-type.application";
@@ -343,6 +371,9 @@
 				Base,
 			);
 			mainGroup = 75D4D84D24741440003295CF;
+			packageReferences = (
+				75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */,
+			);
 			productRefGroup = 75D4D85724741440003295CF /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -415,15 +446,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				75D4D87224741A8F003295CF /* ProfileView.swift in Sources */,
+				75A79C06247A9CB800E3E23F /* FirebaseUserRepository.swift in Sources */,
 				75A79BEC247A771100E3E23F /* UniqueIdableIdentifiable.swift in Sources */,
+				75A79C0E247AB64600E3E23F /* HomeViewModel.swift in Sources */,
 				75A79BEA247A769500E3E23F /* Message.swift in Sources */,
 				75A79BE8247A75B800E3E23F /* PostRequest.swift in Sources */,
+				75A79C0A247A9E3F00E3E23F /* FirebaseUser.swift in Sources */,
 				75D4D88524772A02003295CF /* RequestList.swift in Sources */,
 				75A79BF4247A788800E3E23F /* ImageMessage.swift in Sources */,
 				75D4D87524743D0A003295CF /* ProfileItemRow.swift in Sources */,
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
 				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
+				75A79C0C247AA48600E3E23F /* ProfileViewModel.swift in Sources */,
+				75A79C01247A900C00E3E23F /* UserRepository.swift in Sources */,
 				75D4D85A24741440003295CF /* AppDelegate.swift in Sources */,
 				75D4D87724744425003295CF /* ProfileContent.swift in Sources */,
 				75D4D88324772187003295CF /* RequestItem.swift in Sources */,
@@ -634,6 +670,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Q-Mobile/QGrid";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		75A79C03247A92A100E3E23F /* QGrid */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */;
+			productName = QGrid;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 75D4D84E24741440003295CF /* Project object */;
 }

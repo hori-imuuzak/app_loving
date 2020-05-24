@@ -8,8 +8,14 @@
 
 import SwiftUI
 import FirebaseAuth
+import RxSwift
 
 struct HomeView: View {
+    private let viewModel = HomeViewModel(
+        userRepository: FirebaseUserRepository.instance
+    )
+    private let disposeBag = DisposeBag()
+    
     @State private var isActive = false
     
     var body: some View {
@@ -20,10 +26,22 @@ struct HomeView: View {
                 SplashView()
             }
         }.onAppear(perform: {
-            Auth.auth().signInAnonymously { _, error in
-                if error == nil {
-                    self.hideSplash(delay: 2.5)
+            let auth = Auth.auth()
+            if auth.currentUser != nil {
+                // 未ログインならログイン後、ユーザー作成をする
+                // TODO: 本当はユーザーから初期ユーザー名を入力してもらう
+                Auth.auth().signInAnonymously { _, err in
+                    if err == nil {
+                        self.viewModel.createUser()
+                        self.viewModel.isCreated.subscribe(onNext: { isCreated in
+                            if isCreated {
+                                self.hideSplash(delay: 2.5)
+                            }
+                        }).disposed(by: self.disposeBag)
+                    }
                 }
+            } else {
+                self.hideSplash(delay: 2.5)
             }
         })
     }

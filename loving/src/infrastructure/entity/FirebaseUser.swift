@@ -1,20 +1,14 @@
 //
-//  User.swift
+//  FirebaseUser.swift
 //  loving
 //
 //  Created by 堀知海 on 2020/05/24.
 //  Copyright © 2020 umiapp. All rights reserved.
 //
 
-protocol UserModel: UniqueIdentifiable {
-    var uid: String { get }
-    var name: String { get }
-    var comment: String { get }
-    var profileImageUrl: String { get }
-    var profileCoverUrl: String { get }
-}
+import FirebaseFirestore
 
-struct User: UserModel {
+struct FirebaseUser: UserModel {
     var uid: String
     var name: String
     var comment: String
@@ -27,5 +21,18 @@ struct User: UserModel {
         self.comment = comment
         self.profileImageUrl = profileImageUrl
         self.profileCoverUrl = profileCoverUrl
+    }
+    
+    static func collections() -> CollectionReference {
+        return Firestore
+            .firestore()
+            .collection("users")
+    }
+    
+    static func document(uid: String) -> DocumentReference {
+        return Firestore
+            .firestore()
+            .collection("users")
+            .document(uid)
     }
 }

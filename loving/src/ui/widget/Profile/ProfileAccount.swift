@@ -11,29 +11,38 @@ import SwiftUI
 import URLImage
 
 struct ProfileAccount: View {
+    var name: String
+    var profileImageUrl: String
+    var coverImageUrl: String
+    
     var body: some View {
         ZStack(alignment: .center) {
-            Background()
-            Account()
+            Background(coverImageUrl: self.coverImageUrl)
+            Account(name: self.name, profileImageUrl: self.profileImageUrl)
         }
     }
 }
     
 struct Background: View {
+    var coverImageUrl: String
+    
     var body: some View {
         VStack() {
-            URLImage(URL(string: "https://ibb.co/kGTwxbW")!, placeholder: Image("profile_bg").resizable())
+            URLImage(URL(string: self.coverImageUrl)!, placeholder: Image("profile_bg").resizable())
             }.frame(maxWidth: .infinity, maxHeight: 180, alignment: .center)
     }
 }
 
 struct Account: View {
+    var name: String
+    var profileImageUrl: String
+    
     var body: some View {
         VStack(alignment: .center) {
             HStack() {
                 Button(action: {}) {
                     VStack(alignment: .center) {
-                        URLImage(URL(string: "https://ibb.co/kGTwxbW")!, placeholder: Image("profile_default"))
+                        URLImage(URL(string: self.profileImageUrl)!, placeholder: Image("profile_default"))
                                 .clipShape(Circle())
                                 .frame(width: 32, height: 32)
                         }
@@ -42,7 +51,7 @@ struct Account: View {
                         .overlay(Circle().stroke(Color.white, lineWidth: 1))
                 }
                 VStack(alignment: .leading) {
-                    Text("name")
+                    Text(self.name)
                         .fontWeight(.heavy)
                         .lineLimit(1)
                         .foregroundColor(Color.white)
@@ -60,7 +69,7 @@ struct Account: View {
 #if DEBUG
 struct ProfileAccount_Preview: PreviewProvider {
     static var previews: some View {
-        ProfileAccount()
+        ProfileAccount(name: "ほげ太郎", profileImageUrl: "http://placeimg.com/350/250/people", coverImageUrl: "https://i.picsum.photos/id/1041/350/250.jpg")
     }
 }
 #endif
