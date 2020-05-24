@@ -9,6 +9,28 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State private var isActive = false
+    
+    var body: some View {
+        VStack {
+            if isActive {
+                App()
+            } else {
+                SplashView()
+            }
+        }.onAppear(perform: {
+            self.hideSplash(delay: 2.5)
+        })
+    }
+    
+    func hideSplash(delay: Double) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
+            self.isActive = true
+        }
+    }
+}
+
+struct App: View {
     var body: some View {
         TabView {
             CardStack()
