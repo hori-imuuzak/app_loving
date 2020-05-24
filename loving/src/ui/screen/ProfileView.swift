@@ -12,13 +12,15 @@ import URLImage
 
 struct ProfileView: View {
     var body: some View {
-        ScrollView {
-            VStack() {
-                Spacer().frame(height: 64)
-                ProfileAccount()
-                ProfileContent()
-                Spacer().frame(height: 64)                
+        NavigationView {
+            VStack {
+                ScrollView {
+                    ProfileAccount()
+                    ProfileContent()
+                    Spacer().frame(height: 160)
+                }
             }
+            .navigationBarTitle(Text("設定"))
         }
     }
 }

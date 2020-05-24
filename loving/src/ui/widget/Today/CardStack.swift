@@ -47,12 +47,22 @@ struct CardStack: View {
                 ZStack {
                     ForEach(self.cardList, id: \.id) { card in
                         Group {
-                            TodayCard(id: card.id, onRemove: { swipeState, id in
-                                print("remove: \(swipeState)")
-                                self.cardList.removeAll {
-                                    $0.id == id
-                                }
-                            })
+                            TodayCard(
+                                id: card.id,
+                                onRemove: { swipeState, id in
+                                    print("remove: \(swipeState)")
+                                    self.cardList.removeAll {
+                                        $0.id == id
+                                    }
+                                },
+                                cardInfo: CardInfo(
+                                    image: card.image,
+                                    title: "デートしよう",
+                                    userImage: "profile_default",
+                                    userName: card.partnerName,
+                                    content: card.message
+                                )
+                            )
                                 .animation(.spring())
                                 .frame(width: self.getCardWidth(geometry, position: self.cardList.firstIndex(of: card) ?? 0), height: 400)
                                 .offset(x: 0, y: self.getCardOffset(geometry, position: self.cardList.firstIndex(of: card) ?? 0))

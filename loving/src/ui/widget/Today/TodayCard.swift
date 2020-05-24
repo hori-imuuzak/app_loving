@@ -8,9 +8,19 @@
 
 import SwiftUI
 
+struct CardInfo {
+    let image: String
+    let title: String
+    let userImage: String
+    let userName: String
+    let content: String
+}
+
 struct TodayCard: View {
     @State private var translation: CGSize = .zero
     @State private var swipeStatus: SwipeStatus = .none
+    
+    private let cardInfo: CardInfo
     
     private var id: Int
     private var onRemove: (_ status: SwipeStatus, _ id: Int) -> Void
@@ -22,28 +32,38 @@ struct TodayCard: View {
         case accept, deny, none
     }
     
-    init(id: Int, onRemove: @escaping (_ status: SwipeStatus, _ id: Int) -> Void) {
+    init(id: Int, onRemove: @escaping (_ status: SwipeStatus, _ id: Int) -> Void, cardInfo: CardInfo) {
         self.id = id
         self.onRemove = onRemove
+        self.cardInfo = cardInfo
     }
     
     var body: some View {
         GeometryReader { geometry in
             VStack(alignment: .leading) {
-                Image("date")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: geometry.size.width, height: geometry.size.height * 0.75)
-                    .clipped()
+                ZStack {
+                    Image(self.cardInfo.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: geometry.size.width, height: geometry.size.height * 0.65)
+                        .clipped()
+                    Text(self.cardInfo.title)
+                        .fontWeight(.bold)
+                        .foregroundColor(Color.white)
+                        .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
+                        .font(.title)
+                }
                 HStack {
-                    VStack(alignment: .leading, spacing: Const.Padding.M) {
-                        Text("ほげほげ")
-                            .font(.title)
-                            .bold()
-                    }
-                    Spacer()
                     Image(systemName: "info.circle")
                         .foregroundColor(Color.gray)
+                        .frame(width: 64, height: 64)
+                    VStack(alignment: .leading, spacing: Const.Padding.M) {
+                        Text(self.cardInfo.content)
+                            .font(.system(size: Const.FontSize.L))
+                            .bold()
+                        Text(self.cardInfo.userName)
+                            .font(.system(size: Const.FontSize.M))
+                    }
                 }
                 .padding(.horizontal, Const.Padding.M)
             }
@@ -88,9 +108,19 @@ struct TodayCard: View {
 
 struct TodayCard_Previews: PreviewProvider {
     static var previews: some View {
-        TodayCard(id: 1, onRemove: { result, id in
-            print("onRemove: \(result), \(id)")
-        })
-            .frame(height: 400)
+        TodayCard(
+            id: 1,
+            onRemove: { result, id in
+                print("onRemove: \(result), \(id)")
+            },
+            cardInfo: CardInfo(
+                image: "date",
+                title: "デートしよう",
+                userImage: "profile_default",
+                userName: "ママ",
+                content: "おいしいもの食べにいきたいんだけどうどうかなぁ？"
+            )
+        )
+        .frame(height: 400)
     }
 }
