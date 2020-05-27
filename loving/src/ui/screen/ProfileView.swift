@@ -18,7 +18,9 @@ struct ProfileView: View {
     )
     private let disposeBag = DisposeBag()
 
+    @State private var userId: String = ""
     @State private var name: String = ""
+    @State private var comment: String = ""
     
     var body: some View {
         NavigationView {
@@ -27,9 +29,13 @@ struct ProfileView: View {
                     ProfileAccount(
                         name: self.name,
                         profileImageUrl: "http://placeimg.com/350/250/people",
-                        coverImageUrl: "https://i.picsum.photos/id/1041/350/250.jpg"
+                        coverImageUrl: "https://i.picsum.photos/id/1041/350/250.jpg",
+                        onSaveName: self.updateName
                     )
-                    ProfileContent()
+                    ProfileContent(
+                        comment: self.comment,
+                        onSaveComment: self.updateComment
+                    )
                     Spacer().frame(height: 160)
                 }
             }
@@ -37,10 +43,26 @@ struct ProfileView: View {
         }.onAppear(perform: {
             self.viewModel.getUser()
             
-            self.viewModel.outputs.name.subscribe(onNext: { name in
-                self.name = name
+            self.viewModel.outputs.userId.subscribe(onNext: { value in
+                self.userId = value
+            }).disposed(by: self.disposeBag)
+            
+            self.viewModel.outputs.name.subscribe(onNext: { value in
+                self.name = value
+            }).disposed(by: self.disposeBag)
+            
+            self.viewModel.outputs.comment.subscribe(onNext: { value in
+                self.comment = value
             }).disposed(by: self.disposeBag)
         })
+    }
+    
+    private func updateName(name: String) {
+        self.viewModel.updateName(name)
+    }
+    
+    private func updateComment(comment: String) {
+        self.viewModel.updateComment(comment)
     }
 }
 

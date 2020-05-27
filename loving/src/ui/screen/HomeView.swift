@@ -27,7 +27,7 @@ struct HomeView: View {
             }
         }.onAppear(perform: {
             let auth = Auth.auth()
-            if auth.currentUser != nil {
+            if auth.currentUser == nil {
                 // 未ログインならログイン後、ユーザー作成をする
                 // TODO: 本当はユーザーから初期ユーザー名を入力してもらう
                 Auth.auth().signInAnonymously { _, err in

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		16D8452DFFCE9B81D1FBA635 /* Pods_loving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375931637189A21B2477C4FB /* Pods_loving.framework */; };
+		753E0618247EA87B005F801F /* EditName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0617247EA87B005F801F /* EditName.swift */; };
 		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
 		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75A79BD1247A63F000E3E23F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BD0247A63F000E3E23F /* SplashView.swift */; };
@@ -28,6 +29,9 @@
 		75A79C0A247A9E3F00E3E23F /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */; };
 		75A79C0C247AA48600E3E23F /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */; };
 		75A79C0E247AB64600E3E23F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C0D247AB64600E3E23F /* HomeViewModel.swift */; };
+		75A79C10247E854500E3E23F /* EditComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C0F247E854500E3E23F /* EditComment.swift */; };
+		75A79C13247E85AA00E3E23F /* TextInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C12247E85AA00E3E23F /* TextInput.swift */; };
+		75A79C15247E924E00E3E23F /* FormButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79C14247E924E00E3E23F /* FormButton.swift */; };
 		75D4D85A24741440003295CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85924741440003295CF /* AppDelegate.swift */; };
 		75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85B24741440003295CF /* SceneDelegate.swift */; };
 		75D4D85E24741440003295CF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D85D24741440003295CF /* HomeView.swift */; };
@@ -50,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		375931637189A21B2477C4FB /* Pods_loving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		753E0617247EA87B005F801F /* EditName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditName.swift; sourceTree = "<group>"; };
 		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
 		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75A79BD0247A63F000E3E23F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -69,6 +74,9 @@
 		75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		75A79C0D247AB64600E3E23F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		75A79C0F247E854500E3E23F /* EditComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditComment.swift; sourceTree = "<group>"; };
+		75A79C12247E85AA00E3E23F /* TextInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInput.swift; sourceTree = "<group>"; };
+		75A79C14247E924E00E3E23F /* FormButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormButton.swift; sourceTree = "<group>"; };
 		75D4D85624741440003295CF /* loving.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = loving.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75D4D85924741440003295CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75D4D85B24741440003295CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -199,6 +207,15 @@
 			path = entity;
 			sourceTree = "<group>";
 		};
+		75A79C11247E858D00E3E23F /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				75A79C12247E85AA00E3E23F /* TextInput.swift */,
+				75A79C14247E924E00E3E23F /* FormButton.swift */,
+			);
+			path = Form;
+			sourceTree = "<group>";
+		};
 		75D4D84D24741440003295CF = {
 			isa = PBXGroup;
 			children = (
@@ -276,6 +293,7 @@
 		75D4D870247419EC003295CF /* widget */ = {
 			isa = PBXGroup;
 			children = (
+				75A79C11247E858D00E3E23F /* Form */,
 				75A79BCB247A3A8B00E3E23F /* Today */,
 				75D4D88124772155003295CF /* Request */,
 				75D4D87A24760317003295CF /* Partner */,
@@ -290,6 +308,8 @@
 				75D4D87424743D0A003295CF /* ProfileItemRow.swift */,
 				75D4D87624744425003295CF /* ProfileContent.swift */,
 				75D4D87824744D1D003295CF /* ProfileAccount.swift */,
+				75A79C0F247E854500E3E23F /* EditComment.swift */,
+				753E0617247EA87B005F801F /* EditName.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -457,11 +477,14 @@
 				75D4D87524743D0A003295CF /* ProfileItemRow.swift in Sources */,
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
 				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
+				753E0618247EA87B005F801F /* EditName.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
 				75A79C0C247AA48600E3E23F /* ProfileViewModel.swift in Sources */,
 				75A79C01247A900C00E3E23F /* UserRepository.swift in Sources */,
 				75D4D85A24741440003295CF /* AppDelegate.swift in Sources */,
 				75D4D87724744425003295CF /* ProfileContent.swift in Sources */,
+				75A79C13247E85AA00E3E23F /* TextInput.swift in Sources */,
+				75A79C15247E924E00E3E23F /* FormButton.swift in Sources */,
 				75D4D88324772187003295CF /* RequestItem.swift in Sources */,
 				75D4D88A24773E61003295CF /* RequestTo.swift in Sources */,
 				75D4D88C247742AF003295CF /* AddPartner.swift in Sources */,
@@ -469,6 +492,7 @@
 				75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */,
 				75A79BE4247A716600E3E23F /* Partner.swift in Sources */,
 				75A79BF0247A779E00E3E23F /* RequestStatus.swift in Sources */,
+				75A79C10247E854500E3E23F /* EditComment.swift in Sources */,
 				75D4D8802476B96D003295CF /* PartnerList.swift in Sources */,
 				75D4D87924744D1D003295CF /* ProfileAccount.swift in Sources */,
 				75D4D85E24741440003295CF /* HomeView.swift in Sources */,

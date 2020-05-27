@@ -13,6 +13,7 @@ struct ProfileItemRow: View {
     var hint: String = ""
     var text: String = ""
     var isFirst: Bool = false
+    var destination: AnyView? = nil
     
     var body: some View {
         VStack() {
@@ -21,7 +22,7 @@ struct ProfileItemRow: View {
                     .frame(height: 1)
                     .background(Color.gray)
             }
-            Button(action: {}) {
+            NavigationLink(destination: self.destination) {
                 VStack() {
                     HStack(alignment: .center) {
                         VStack(alignment: .leading) {
@@ -53,7 +54,7 @@ struct ProfileItemRow: View {
 #if DEBUG
 struct ProfileItemRow_Preview: PreviewProvider {
     static var previews: some View {
-        ProfileItemRow(label: "PartnerID", hint: "fugafuga", text: "hogehoge", isFirst: true)
+        ProfileItemRow(label: "PartnerID", hint: "fugafuga", text: "hogehoge", isFirst: true, destination: AnyView(Text("Hoge")))
     }
 }
 #endif
