@@ -43,12 +43,12 @@ struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutpu
                 uid: uid,
                 name: "test",
                 comment: "おねだり待ってます！",
-                profileImageUrl: "",
+                profileImageUrl: "users/default_user.png",
                 profileCoverUrl: ""
             )
             self.userRepository.create(user: user).subscribe(onNext: { user in
                 self.isCreatedSubject.onNext(true)
-            }).disposed(by: disposeBag)
+            }).disposed(by: self.disposeBag)
         }
     }
 }

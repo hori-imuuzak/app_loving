@@ -58,7 +58,7 @@ struct CardStack: View {
                                 cardInfo: CardInfo(
                                     image: card.image,
                                     title: "デートしよう",
-                                    userImage: "profile_default",
+                                    userImage: "default_user",
                                     userName: card.partnerName,
                                     content: card.message
                                 )

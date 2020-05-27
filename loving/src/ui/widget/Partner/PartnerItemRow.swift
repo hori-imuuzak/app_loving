@@ -22,7 +22,7 @@ struct PartnerItemRow: View {
         VStack() {
             Button(action: {}) {
                 HStack() {
-                    URLImage(URL(string: "https://ibb.co/kGTwxbW")!, placeholder: Image("profile_default").resizable())
+                    URLImage(URL(string: "https://ibb.co/kGTwxbW")!, placeholder: Image("default_user").resizable())
                     .frame(width: 32, height: 32, alignment: .center)
                     VStack(alignment: .leading) {
                         Text(self.name)

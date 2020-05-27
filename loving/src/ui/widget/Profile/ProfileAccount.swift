@@ -30,7 +30,11 @@ struct Background: View {
     
     var body: some View {
         VStack() {
-            URLImage(URL(string: self.coverImageUrl)!, placeholder: Image("profile_bg").resizable()).scaledToFill()
+            if self.coverImageUrl.isEmpty {
+                Image("profile_bg").resizable().scaledToFill()
+            } else {
+                URLImage(URL(string: self.coverImageUrl)!, placeholder: Image("profile_bg").resizable()).scaledToFill()
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: 180, alignment: .center)
         .clipped()
@@ -48,15 +52,19 @@ struct Account: View {
             HStack() {
                 Button(action: {}) {
                     VStack(alignment: .center) {
-                        URLImage(URL(string: self.profileImageUrl)!, placeholder: Image("profile_default"))
+                        if self.profileImageUrl.isEmpty {
+                            Image("default_user")
+                                .foregroundColor(Color.white)
+                                .frame(width: 64, height: 64)
+                        } else {
+                            URLImage(URL(string: self.profileImageUrl)!, placeholder: Image("default_user"))
+                                .foregroundColor(Color.white)
+                                .frame(width: 64, height: 64)
                                 .clipShape(Circle())
-                                .frame(width: 32, height: 32)
+                                .clipped()
+                                .overlay(Circle().stroke(Color.white, lineWidth: 1))
                         }
-                        .foregroundColor(Color.white)
-                        .frame(width: 64, height: 64)
-                        .clipShape(Circle())
-                        .clipped()
-                        .overlay(Circle().stroke(Color.white, lineWidth: 1))
+                    }
                 }
                 VStack(alignment: .leading) {
                     Text(self.name)

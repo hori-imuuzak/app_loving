@@ -116,7 +116,7 @@ struct TodayCard_Previews: PreviewProvider {
             cardInfo: CardInfo(
                 image: "date",
                 title: "デートしよう",
-                userImage: "profile_default",
+                userImage: "default_user",
                 userName: "ママ",
                 content: "おいしいもの食べにいきたいんだけどうどうかなぁ？"
             )
