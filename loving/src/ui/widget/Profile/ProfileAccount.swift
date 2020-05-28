@@ -18,25 +18,28 @@ struct ProfileAccount: View {
     var onSaveName: (_: String) -> Void
     
     var body: some View {
-        ZStack(alignment: .center) {
-            Background(coverImageUrl: self.coverImageUrl)
-            Account(name: self.name, profileImageUrl: self.profileImageUrl, onSaveName: self.onSaveName)
-        }
+        GeometryReader { geometry in
+            ZStack(alignment: .center) {
+                Background(coverImageUrl: self.coverImageUrl, width: geometry.size.width)
+                Account(name: self.name, profileImageUrl: self.profileImageUrl, onSaveName: self.onSaveName)
+            }
+        }.frame(height: 180)
     }
 }
     
 struct Background: View {
     var coverImageUrl: String
+    var width: CGFloat
     
     var body: some View {
         VStack() {
             if self.coverImageUrl.isEmpty {
-                Image("profile_bg").resizable().scaledToFill()
+                Image("default_cover").resizable().scaledToFill()
             } else {
-                URLImage(URL(string: self.coverImageUrl)!, placeholder: Image("profile_bg").resizable()).scaledToFill()
+                URLImage(URL(string: self.coverImageUrl)!, placeholder: Image("default_cover").resizable()).scaledToFill()
             }
         }
-        .frame(maxWidth: .infinity, maxHeight: 180, alignment: .center)
+        .frame(width: self.width, height: 180, alignment: .center)
         .clipped()
     }
 }
@@ -71,10 +74,12 @@ struct Account: View {
                         .fontWeight(.heavy)
                         .lineLimit(1)
                         .foregroundColor(Color.white)
+                        .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
                     NavigationLink(destination: EditName(onSaveName: self.onSaveName)) {
                         Text("名前を変更する")
                             .font(.system(size: Const.FontSize.S))
                             .foregroundColor(Color.white)
+                            .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
                     }.padding(.top, Const.Padding.S)
                 }
             }

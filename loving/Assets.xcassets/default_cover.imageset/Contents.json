@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "profile_bg.png",
+      "filename" : "default_cover.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "profile_bg@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "profile_bg@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

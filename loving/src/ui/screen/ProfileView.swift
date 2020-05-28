@@ -26,20 +26,18 @@ struct ProfileView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                ScrollView {
-                    ProfileAccount(
-                        name: self.name,
-                        profileImageUrl: self.profileImageUrl,
-                        coverImageUrl: self.coverImageUrl,
-                        onSaveName: self.updateName
-                    )
-                    ProfileContent(
-                        comment: self.comment,
-                        onSaveComment: self.updateComment
-                    )
-                    Spacer().frame(height: 160)
-                }
+            ScrollView {
+                ProfileAccount(
+                    name: self.name,
+                    profileImageUrl: self.profileImageUrl,
+                    coverImageUrl: self.coverImageUrl,
+                    onSaveName: self.updateName
+                )
+                ProfileContent(
+                    comment: self.comment,
+                    onSaveComment: self.updateComment
+                )
+                Spacer().frame(height: 160)
             }
             .navigationBarTitle(Text("設定"))
         }.onAppear(perform: {

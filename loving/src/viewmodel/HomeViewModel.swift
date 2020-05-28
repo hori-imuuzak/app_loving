@@ -22,6 +22,20 @@ protocol HomeViewModelType {
     var outputs: HomeViewModelOutputs { get }
 }
 
+let defaultCoverImages = [
+    "default_cover0.jpg",
+    "default_cover1.jpg",
+    "default_cover2.jpg",
+    "default_cover3.jpg",
+    "default_cover4.jpg",
+    "default_cover5.jpg",
+    "default_cover6.jpg",
+    "default_cover7.jpg",
+    "default_cover8.jpg",
+    "default_cover9.jpg",
+    "default_cover10.jpg"
+]
+
 struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutputs {
     init(userRepository: UserRepository) {
         self.userRepository = userRepository
@@ -44,7 +58,7 @@ struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutpu
                 name: "test",
                 comment: "おねだり待ってます！",
                 profileImageUrl: "users/default_user.png",
-                profileCoverUrl: ""
+                profileCoverUrl: "covers/\(defaultCoverImages.randomElement() ?? defaultCoverImages[0])"
             )
             self.userRepository.create(user: user).subscribe(onNext: { user in
                 self.isCreatedSubject.onNext(true)
