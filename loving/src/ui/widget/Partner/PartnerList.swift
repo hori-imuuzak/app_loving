@@ -39,7 +39,7 @@ struct PartnerList: View {
                 }
                 .sheet(isPresented: self.$isShowAddPartnerView) {
                     AddPartner(addPartner: {
-                        self.isShowAddPartnerView.toggle()
+                        self.isShowAddPartnerView = true
                     })
                 }
             )
@@ -47,7 +47,7 @@ struct PartnerList: View {
     }
     
     private func onClickAdd() {
-        self.isShowAddPartnerView.toggle()
+        self.isShowAddPartnerView = false
     }
 }
 

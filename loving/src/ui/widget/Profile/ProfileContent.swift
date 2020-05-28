@@ -13,14 +13,18 @@ struct ProfileContent: View {
     var comment: String? = nil
     var onSaveComment: (_: String) -> Void
     
+    @State var isShowQrCode: Bool = false
+    
     var body: some View {
         VStack() {
             ProfileItemRow(
                 label: "PartnerID",
                 text: "QRコードを表示する",
                 isFirst: true,
-                destination: AnyView(Text("Hoge"))
-            )
+                action: { self.isShowQrCode = true }
+            ).sheet(isPresented: self.$isShowQrCode) {
+                UidQrGenerate(uid: self.uid ?? "")
+            }
             ProfileItemRow(
                 label: "背景を設定",
                 hint: "プロフィールの背景画像を変更できます",

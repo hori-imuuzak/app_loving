@@ -14,6 +14,7 @@
 		753E061E247F3B57005F801F /* FirebasePartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061D247F3B57005F801F /* FirebasePartner.swift */; };
 		753E0620247F3FDF005F801F /* PartnerListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061F247F3FDF005F801F /* PartnerListScreen.swift */; };
 		753E0622247F403E005F801F /* PartnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0621247F403E005F801F /* PartnerViewModel.swift */; };
+		756E59B1247FB47C00A94D78 /* UidQrGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E59B0247FB47C00A94D78 /* UidQrGenerate.swift */; };
 		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
 		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75A79BD1247A63F000E3E23F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BD0247A63F000E3E23F /* SplashScreen.swift */; };
@@ -65,6 +66,7 @@
 		753E061D247F3B57005F801F /* FirebasePartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePartner.swift; sourceTree = "<group>"; };
 		753E061F247F3FDF005F801F /* PartnerListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerListScreen.swift; sourceTree = "<group>"; };
 		753E0621247F403E005F801F /* PartnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewModel.swift; sourceTree = "<group>"; };
+		756E59B0247FB47C00A94D78 /* UidQrGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UidQrGenerate.swift; sourceTree = "<group>"; };
 		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
 		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75A79BD0247A63F000E3E23F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				75D4D87424743D0A003295CF /* ProfileItemRow.swift */,
 				75D4D87624744425003295CF /* ProfileContent.swift */,
 				75D4D87824744D1D003295CF /* ProfileAccount.swift */,
+				756E59B0247FB47C00A94D78 /* UidQrGenerate.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
 				753E061E247F3B57005F801F /* FirebasePartner.swift in Sources */,
 				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
+				756E59B1247FB47C00A94D78 /* UidQrGenerate.swift in Sources */,
 				753E0618247EA87B005F801F /* EditNameScreen.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
 				753E061A247F3986005F801F /* PartnerRepository.swift in Sources */,

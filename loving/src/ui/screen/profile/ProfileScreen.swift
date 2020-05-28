@@ -34,6 +34,7 @@ struct ProfileScreen: View {
                     onSaveName: self.updateName
                 )
                 ProfileContent(
+                    uid: self.userId,
                     comment: self.comment,
                     onSaveComment: self.updateComment
                 )

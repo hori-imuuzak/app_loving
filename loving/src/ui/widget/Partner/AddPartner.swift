@@ -30,8 +30,7 @@ struct AddPartner: View {
             TextField("PartnerIDを入力してください", text: $inputPartnerId)
             Button("検索") {
                 // TODO mock
-                // toggle()微妙
-                self.isFoundPartner.toggle()
+                self.isFoundPartner = true
                 self.inputPartnerId = ""
                 UIApplication.shared.endEditing()
             }.padding(.top, Const.Padding.M)
