@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		16D8452DFFCE9B81D1FBA635 /* Pods_loving.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 375931637189A21B2477C4FB /* Pods_loving.framework */; };
 		753E0618247EA87B005F801F /* EditName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0617247EA87B005F801F /* EditName.swift */; };
+		753E061A247F3986005F801F /* PartnerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0619247F3986005F801F /* PartnerRepository.swift */; };
+		753E061C247F3A7B005F801F /* FirebasePartnerRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061B247F3A7B005F801F /* FirebasePartnerRepository.swift */; };
+		753E061E247F3B57005F801F /* FirebasePartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061D247F3B57005F801F /* FirebasePartner.swift */; };
+		753E0620247F3FDF005F801F /* PartnerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061F247F3FDF005F801F /* PartnerListView.swift */; };
+		753E0622247F403E005F801F /* PartnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0621247F403E005F801F /* PartnerViewModel.swift */; };
 		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
 		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75A79BD1247A63F000E3E23F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BD0247A63F000E3E23F /* SplashView.swift */; };
@@ -55,6 +60,11 @@
 /* Begin PBXFileReference section */
 		375931637189A21B2477C4FB /* Pods_loving.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_loving.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		753E0617247EA87B005F801F /* EditName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditName.swift; sourceTree = "<group>"; };
+		753E0619247F3986005F801F /* PartnerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerRepository.swift; sourceTree = "<group>"; };
+		753E061B247F3A7B005F801F /* FirebasePartnerRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePartnerRepository.swift; sourceTree = "<group>"; };
+		753E061D247F3B57005F801F /* FirebasePartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePartner.swift; sourceTree = "<group>"; };
+		753E061F247F3FDF005F801F /* PartnerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerListView.swift; sourceTree = "<group>"; };
+		753E0621247F403E005F801F /* PartnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewModel.swift; sourceTree = "<group>"; };
 		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
 		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75A79BD0247A63F000E3E23F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
@@ -154,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				75A79C00247A900B00E3E23F /* UserRepository.swift */,
+				753E0619247F3986005F801F /* PartnerRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -163,6 +174,7 @@
 			children = (
 				75A79C0B247AA48600E3E23F /* ProfileViewModel.swift */,
 				75A79C0D247AB64600E3E23F /* HomeViewModel.swift */,
+				753E0621247F403E005F801F /* PartnerViewModel.swift */,
 			);
 			path = viewmodel;
 			sourceTree = "<group>";
@@ -172,6 +184,7 @@
 			children = (
 				75A79C07247A9E2900E3E23F /* entity */,
 				75A79C05247A9CB800E3E23F /* FirebaseUserRepository.swift */,
+				753E061B247F3A7B005F801F /* FirebasePartnerRepository.swift */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -203,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				75A79C09247A9E3F00E3E23F /* FirebaseUser.swift */,
+				753E061D247F3B57005F801F /* FirebasePartner.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -286,6 +300,7 @@
 				75D4D87124741A8F003295CF /* ProfileView.swift */,
 				75D4D85D24741440003295CF /* HomeView.swift */,
 				75A79BD0247A63F000E3E23F /* SplashView.swift */,
+				753E061F247F3FDF005F801F /* PartnerListView.swift */,
 			);
 			path = screen;
 			sourceTree = "<group>";
@@ -471,16 +486,20 @@
 				75A79C0E247AB64600E3E23F /* HomeViewModel.swift in Sources */,
 				75A79BEA247A769500E3E23F /* Message.swift in Sources */,
 				75A79BE8247A75B800E3E23F /* PostRequest.swift in Sources */,
+				753E0622247F403E005F801F /* PartnerViewModel.swift in Sources */,
 				75A79C0A247A9E3F00E3E23F /* FirebaseUser.swift in Sources */,
 				75D4D88524772A02003295CF /* RequestList.swift in Sources */,
 				75A79BF4247A788800E3E23F /* ImageMessage.swift in Sources */,
 				75D4D87524743D0A003295CF /* ProfileItemRow.swift in Sources */,
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
+				753E061E247F3B57005F801F /* FirebasePartner.swift in Sources */,
 				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
 				753E0618247EA87B005F801F /* EditName.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
+				753E061A247F3986005F801F /* PartnerRepository.swift in Sources */,
 				75A79C0C247AA48600E3E23F /* ProfileViewModel.swift in Sources */,
 				75A79C01247A900C00E3E23F /* UserRepository.swift in Sources */,
+				753E061C247F3A7B005F801F /* FirebasePartnerRepository.swift in Sources */,
 				75D4D85A24741440003295CF /* AppDelegate.swift in Sources */,
 				75D4D87724744425003295CF /* ProfileContent.swift in Sources */,
 				75A79C13247E85AA00E3E23F /* TextInput.swift in Sources */,
@@ -497,6 +516,7 @@
 				75D4D87924744D1D003295CF /* ProfileAccount.swift in Sources */,
 				75D4D85E24741440003295CF /* HomeView.swift in Sources */,
 				75D4D88E24776049003295CF /* UIApplication_ext.swift in Sources */,
+				753E0620247F3FDF005F801F /* PartnerListView.swift in Sources */,
 				75D4D87E24760EA9003295CF /* Const.swift in Sources */,
 				75A79BF2247A785300E3E23F /* TextMessage.swift in Sources */,
 				75A79BD1247A63F000E3E23F /* SplashView.swift in Sources */,

@@ -20,6 +20,8 @@ class FirebaseUserRepository: UserRepository {
         }
     }
     
+    private init() {}
+    
     func get(uid: String) -> Observable<User> {
         return Observable.create { subscribe -> Disposable in
             FirebaseUser

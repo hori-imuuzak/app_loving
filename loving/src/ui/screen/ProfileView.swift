@@ -69,11 +69,11 @@ struct ProfileView: View {
     }
     
     private func updateName(name: String) {
-        self.viewModel.updateName(name)
+        self.viewModel.inputs.updateName(name)
     }
     
     private func updateComment(comment: String) {
-        self.viewModel.updateComment(comment)
+        self.viewModel.inputs.updateComment(comment)
     }
 }
 

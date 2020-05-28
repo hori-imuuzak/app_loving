@@ -12,6 +12,7 @@ import FirebaseStorage
 
 protocol ProfileViewModelInputs {
     func getUser()
+    func updateName(_: String)
     func updateComment(_: String)
 }
 

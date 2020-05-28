@@ -62,11 +62,7 @@ struct App: View {
                         .renderingMode(.template)
                     Text("本日のリクエスト")
                 }
-            PartnerList(partners: [
-                PartnerItem(name: "旦那さん"),
-                PartnerItem(name: "ママ"),
-                PartnerItem(name: "息子ちゃん")
-            ])
+            PartnerListView()
                 .tabItem {
                     Image("father")
                         .renderingMode(.template)
