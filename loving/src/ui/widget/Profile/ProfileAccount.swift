@@ -60,15 +60,19 @@ struct Account: View {
                                 .foregroundColor(Color.white)
                                 .frame(width: 64, height: 64)
                         } else {
-                            URLImage(URL(string: self.profileImageUrl)!, placeholder: Image("default_user"))
-                                .foregroundColor(Color.white)
-                                .frame(width: 64, height: 64)
-                                .clipShape(Circle())
-                                .clipped()
+                            URLImage(URL(string: self.profileImageUrl)!, placeholder: Image("default_user")) { proxy in
+                                    proxy.image
+                                        .resizable()
+                                        .scaledToFit()
+                                        .clipShape(Circle())
+                                        .clipped()
+                                        .frame(width: 64, height: 64)
+                                }
                                 .overlay(Circle().stroke(Color.white, lineWidth: 1))
                         }
                     }
                 }
+                .buttonStyle(PlainButtonStyle())
                 VStack(alignment: .leading) {
                     Text(self.name)
                         .fontWeight(.heavy)

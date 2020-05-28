@@ -18,7 +18,7 @@ struct PartnerItem: Identifiable {
 }
 
 struct PartnerItemRow: View {
-    @State private var imageUrl: String = ""
+    @State private var imageUrl: URL? = nil
 
     var name: String
     var profileImage: String
@@ -28,15 +28,16 @@ struct PartnerItemRow: View {
         VStack() {
             Button(action: {}) {
                 HStack() {
-                    if self.imageUrl.isEmpty {
+                    if self.imageUrl == nil {
                         Image("default_user")
                             .resizable()
                             .frame(width: 32, height: 32, alignment: .center)
                     } else {
-                        URLImage(URL(string: self.imageUrl)!, placeholder: Image("default_user").resizable()) { proxy in
+                        URLImage(self.imageUrl!, placeholder: Image("default_user").resizable()) { proxy in
                             proxy.image
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
+                                .clipShape(Circle())
                                 .clipped()
                         }
                         .frame(width: 32, height: 32, alignment: .center)
@@ -53,7 +54,7 @@ struct PartnerItemRow: View {
                     Spacer()
                 }
             }
-            .foregroundColor(Color.black)
+            .buttonStyle(PlainButtonStyle())
             .padding(Const.Padding.L)
         }
         .background(Color.white)
@@ -68,7 +69,7 @@ struct PartnerItemRow: View {
         Storage.storage().reference(withPath: path).downloadURL { url, err in
             if err != nil { return }
             
-            if let url = url?.absoluteString {
+            if let url = url?.absoluteURL {
                 self.imageUrl = url
             }
         }
