@@ -15,6 +15,10 @@
 		753E0620247F3FDF005F801F /* PartnerListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E061F247F3FDF005F801F /* PartnerListScreen.swift */; };
 		753E0622247F403E005F801F /* PartnerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E0621247F403E005F801F /* PartnerViewModel.swift */; };
 		756E59B1247FB47C00A94D78 /* UidQrGenerate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E59B0247FB47C00A94D78 /* UidQrGenerate.swift */; };
+		756E59B4247FC1BD00A94D78 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 756E59B3247FC1BD00A94D78 /* CodeScanner */; };
+		756E59B6247FD9AC00A94D78 /* AccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E59B5247FD9AC00A94D78 /* AccountRepository.swift */; };
+		756E59B8247FDA2900A94D78 /* FirebaseAccountRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E59B7247FDA2900A94D78 /* FirebaseAccountRepository.swift */; };
+		756E59BA247FEB5200A94D78 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756E59B9247FEB5200A94D78 /* Storage.swift */; };
 		75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCC247A3AE400E3E23F /* TodayCard.swift */; };
 		75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BCE247A403A00E3E23F /* CardStack.swift */; };
 		75A79BD1247A63F000E3E23F /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A79BD0247A63F000E3E23F /* SplashScreen.swift */; };
@@ -67,6 +71,9 @@
 		753E061F247F3FDF005F801F /* PartnerListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerListScreen.swift; sourceTree = "<group>"; };
 		753E0621247F403E005F801F /* PartnerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartnerViewModel.swift; sourceTree = "<group>"; };
 		756E59B0247FB47C00A94D78 /* UidQrGenerate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UidQrGenerate.swift; sourceTree = "<group>"; };
+		756E59B5247FD9AC00A94D78 /* AccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRepository.swift; sourceTree = "<group>"; };
+		756E59B7247FDA2900A94D78 /* FirebaseAccountRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAccountRepository.swift; sourceTree = "<group>"; };
+		756E59B9247FEB5200A94D78 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		75A79BCC247A3AE400E3E23F /* TodayCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayCard.swift; sourceTree = "<group>"; };
 		75A79BCE247A403A00E3E23F /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
 		75A79BD0247A63F000E3E23F /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
@@ -120,6 +127,7 @@
 			files = (
 				75A79C04247A92A100E3E23F /* QGrid in Frameworks */,
 				16D8452DFFCE9B81D1FBA635 /* Pods_loving.framework in Frameworks */,
+				756E59B4247FC1BD00A94D78 /* CodeScanner in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +202,7 @@
 			children = (
 				75A79C00247A900B00E3E23F /* UserRepository.swift */,
 				753E0619247F3986005F801F /* PartnerRepository.swift */,
+				756E59B5247FD9AC00A94D78 /* AccountRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -214,6 +223,8 @@
 				75A79C07247A9E2900E3E23F /* entity */,
 				75A79C05247A9CB800E3E23F /* FirebaseUserRepository.swift */,
 				753E061B247F3A7B005F801F /* FirebasePartnerRepository.swift */,
+				756E59B7247FDA2900A94D78 /* FirebaseAccountRepository.swift */,
+				756E59B9247FEB5200A94D78 /* Storage.swift */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -404,6 +415,7 @@
 			name = loving;
 			packageProductDependencies = (
 				75A79C03247A92A100E3E23F /* QGrid */,
+				756E59B3247FC1BD00A94D78 /* CodeScanner */,
 			);
 			productName = loving;
 			productReference = 75D4D85624741440003295CF /* loving.app */;
@@ -435,6 +447,7 @@
 			mainGroup = 75D4D84D24741440003295CF;
 			packageReferences = (
 				75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */,
+				756E59B2247FC1BD00A94D78 /* XCRemoteSwiftPackageReference "CodeScanner" */,
 			);
 			productRefGroup = 75D4D85724741440003295CF /* Products */;
 			projectDirPath = "";
@@ -521,6 +534,7 @@
 				75D4D87C24760332003295CF /* PartnerItemRow.swift in Sources */,
 				753E061E247F3B57005F801F /* FirebasePartner.swift in Sources */,
 				75A79BE6247A742700E3E23F /* Request.swift in Sources */,
+				756E59BA247FEB5200A94D78 /* Storage.swift in Sources */,
 				756E59B1247FB47C00A94D78 /* UidQrGenerate.swift in Sources */,
 				753E0618247EA87B005F801F /* EditNameScreen.swift in Sources */,
 				75A79BCD247A3AE400E3E23F /* TodayCard.swift in Sources */,
@@ -541,11 +555,13 @@
 				75A79BF0247A779E00E3E23F /* RequestStatus.swift in Sources */,
 				75A79C10247E854500E3E23F /* EditCommentScreen.swift in Sources */,
 				75D4D8802476B96D003295CF /* PartnerList.swift in Sources */,
+				756E59B6247FD9AC00A94D78 /* AccountRepository.swift in Sources */,
 				75D4D87924744D1D003295CF /* ProfileAccount.swift in Sources */,
 				75D4D85E24741440003295CF /* HomeScreen.swift in Sources */,
 				75D4D88E24776049003295CF /* UIApplication_ext.swift in Sources */,
 				753E0620247F3FDF005F801F /* PartnerListScreen.swift in Sources */,
 				75D4D87E24760EA9003295CF /* Const.swift in Sources */,
+				756E59B8247FDA2900A94D78 /* FirebaseAccountRepository.swift in Sources */,
 				75A79BF2247A785300E3E23F /* TextMessage.swift in Sources */,
 				75A79BD1247A63F000E3E23F /* SplashScreen.swift in Sources */,
 				75A79BE2247A715700E3E23F /* User.swift in Sources */,
@@ -744,6 +760,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		756E59B2247FC1BD00A94D78 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.6;
+			};
+		};
 		75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Q-Mobile/QGrid";
@@ -755,6 +779,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		756E59B3247FC1BD00A94D78 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 756E59B2247FC1BD00A94D78 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
 		75A79C03247A92A100E3E23F /* QGrid */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 75A79C02247A92A100E3E23F /* XCRemoteSwiftPackageReference "QGrid" */;

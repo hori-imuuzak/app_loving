@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import CodeScanner
 
 struct AddPartner: View {
     let addPartner: () -> Void
@@ -15,25 +16,13 @@ struct AddPartner: View {
     
     var body: some View {
         VStack {
-            VStack(alignment: .leading) {
-                Text("パートナーの追加").font(.title)
-                Text("PartnerIDを利用して、追加したいパートナーを検索することができます。")
-                    .font(.system(size: Const.FontSize.L))
-                    .lineLimit(nil)
-                    .padding(.top, Const.Padding.M)
-                    .fixedSize(horizontal: false, vertical: true)
-                Text("PartnerIDは、設定画面で確認できます。")
-                    .font(.system(size: Const.FontSize.S))
-                    .foregroundColor(Color.gray)
-                    .padding(.top, Const.Padding.S)
+            if inputPartnerId.isEmpty {
+                CodeScannerView(
+                    codeTypes: [.qr],
+                    simulatedData: "hogehoge_test_data_uid",
+                    completion: self.handleScan
+                )
             }
-            TextField("PartnerIDを入力してください", text: $inputPartnerId)
-            Button("検索") {
-                // TODO mock
-                self.isFoundPartner = true
-                self.inputPartnerId = ""
-                UIApplication.shared.endEditing()
-            }.padding(.top, Const.Padding.M)
             if self.isFoundPartner {
                 VStack {
                     PartnerItemRow(name: "見つけた相手の名前", profileImage: "")
@@ -46,6 +35,20 @@ struct AddPartner: View {
         }
         .padding(.vertical, 120)
         .padding(.horizontal, Const.Padding.M)
+    }
+    
+    private func handleScan(result: Result<String, CodeScannerView.ScanError>) {
+        switch result {
+        case .success(let code):
+            let details = code.components(separatedBy: "\n")
+            guard details.count == 1 else { return }
+            
+            self.inputPartnerId = details[0]
+            // mock
+            self.isFoundPartner = true
+        case .failure(let err):
+            print("qr scan error: \(err.localizedDescription)")
+        }
     }
 }
 

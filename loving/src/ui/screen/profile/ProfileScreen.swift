@@ -14,7 +14,9 @@ import RxSwift
 struct ProfileScreen: View {
     
     private let viewModel = ProfileViewModel(
-        userRepository: FirebaseUserRepository.instance
+        accountRepository: FirebaseAccountRepository.instance,
+        userRepository: FirebaseUserRepository.instance,
+        storage: FirebaseStorageImpl()
     )
     private let disposeBag = DisposeBag()
 

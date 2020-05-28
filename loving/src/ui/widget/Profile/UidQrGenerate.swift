@@ -31,7 +31,7 @@ struct UidQrGenerate: View {
             let uidData = self.uid.data(using: .utf8)
             guard let data = uidData else { return }
 
-            let sizeTransform = CGAffineTransform(scaleX: 8, y: 8)
+            let sizeTransform = CGAffineTransform(scaleX: 10, y: 10)
 
             let qr = CIFilter(name: "CIQRCodeGenerator", parameters: ["inputMessage": data, "inputCorrectionLevel": "M"])
             if let qrImage = qr?.outputImage?.transformed(by: sizeTransform) {

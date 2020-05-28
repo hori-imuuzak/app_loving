@@ -12,6 +12,6 @@ protocol UserRepository {
     static var instance: UserRepository { get }
 
     func get(uid: String) -> Observable<User>
-    func create(user: User) -> Observable<User>
+    func create(name: String, comment: String, profileImageUrl: String, profileCoverUrl: String) -> Observable<User>
     func update(user: User) -> Observable<User>
 }

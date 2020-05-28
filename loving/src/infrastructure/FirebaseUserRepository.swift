@@ -7,6 +7,7 @@
 //
 
 import RxSwift
+import FirebaseAuth
 
 class FirebaseUserRepository: UserRepository {
     private static var _instance: UserRepository? = nil
@@ -48,20 +49,27 @@ class FirebaseUserRepository: UserRepository {
         }
     }
     
-    func create(user: User) -> Observable<User> {
+    func create(name: String, comment: String, profileImageUrl: String, profileCoverUrl: String) -> Observable<User> {
+        let uid = Auth.auth().currentUser?.uid ?? ""
         return Observable.create { subscribe -> Disposable in
             FirebaseUser
-                .document(uid: user.uid)
+                .document(uid: uid)
                 .setData([
-                    "name": user.name,
-                    "comment": user.comment,
-                    "profileImageUrl": user.profileImageUrl,
-                    "profileCoverUrl": user.profileCoverUrl
+                    "name": name,
+                    "comment": comment,
+                    "profileImageUrl": profileImageUrl,
+                    "profileCoverUrl": profileCoverUrl
                 ]) { err in
                     if let err = err {
                         subscribe.onError(err)
                     } else {
-                        subscribe.onNext(user)
+                        subscribe.onNext(User(
+                            uid: uid,
+                            name: name,
+                            comment: comment,
+                            profileImageUrl: profileImageUrl,
+                            profileCoverUrl: profileCoverUrl
+                        ))
                         subscribe.onCompleted()
                     }
             }

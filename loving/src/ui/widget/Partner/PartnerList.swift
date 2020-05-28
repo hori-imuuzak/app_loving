@@ -25,12 +25,19 @@ struct PartnerList: View {
     var partners: [PartnerItem] = []
     var body: some View {
         NavigationView {
-            List(partners) { partner in
-                PartnerItemRow(
-                    name: partner.name,
-                    profileImage: partner.profileImage,
-                    message: partner.message
-                )
+            VStack {
+                if partners.isEmpty {
+                    Text("パートナーを追加しましょう！")
+                    Text("QRコードで簡単に追加できます。")
+                } else {
+                    List(partners) { partner in
+                        PartnerItemRow(
+                            name: partner.name,
+                            profileImage: partner.profileImage,
+                            message: partner.message
+                        )
+                    }
+                }
             }
             .navigationBarTitle(Text("パートナー"))
             .navigationBarItems(trailing:
@@ -39,7 +46,7 @@ struct PartnerList: View {
                 }
                 .sheet(isPresented: self.$isShowAddPartnerView) {
                     AddPartner(addPartner: {
-                        self.isShowAddPartnerView = true
+                        self.isShowAddPartnerView = false
                     })
                 }
             )
@@ -47,7 +54,7 @@ struct PartnerList: View {
     }
     
     private func onClickAdd() {
-        self.isShowAddPartnerView = false
+        self.isShowAddPartnerView = true
     }
 }
 

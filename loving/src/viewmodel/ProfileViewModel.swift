@@ -7,8 +7,6 @@
 //
 
 import RxSwift
-import FirebaseAuth
-import FirebaseStorage
 
 protocol ProfileViewModelInputs {
     func getUser()
@@ -30,12 +28,16 @@ protocol ProfileViewModelType {
 }
 
 struct ProfileViewModel: ProfileViewModelType, ProfileViewModelInputs, ProfileViewModelOutputs {
-    init(userRepository: UserRepository) {
+    private var accountRepository: AccountRepository
+    private var userRepository: UserRepository
+    private var storage: StorageProtocol
+    
+    init(accountRepository: AccountRepository, userRepository: UserRepository, storage: StorageProtocol) {
+        self.accountRepository = accountRepository
         self.userRepository = userRepository
+        self.storage = storage
     }
 
-    private var userRepository: UserRepository
-    
     var inputs: ProfileViewModelInputs { return self }
     var outputs: ProfileViewModelOutputs { return self }
     
@@ -43,20 +45,16 @@ struct ProfileViewModel: ProfileViewModelType, ProfileViewModelInputs, ProfileVi
     
     var userId: Observable<String> { return userSubject.map({ $0?.uid ?? "" }) }
     var name: Observable<String> { return userSubject.map({ $0?.name ?? "" }) }
-    var profileImageUrl: Observable<String> {
-        return userSubject.flatMap({ self.createStorageUrlObservable($0?.profileImageUrl ?? "") })
-    }
-    var coverImageUrl: Observable<String> {
-        return userSubject.flatMap({ self.createStorageUrlObservable($0?.profileCoverUrl ?? "") })
-    }
+    var profileImageUrl: Observable<String> { return userSubject.flatMap({ self.storage.getUrl($0?.profileImageUrl ?? "") }) }
+    var coverImageUrl: Observable<String> { return userSubject.flatMap({ self.storage.getUrl($0?.profileCoverUrl ?? "") }) }
     var comment: Observable<String> { return userSubject.map({ $0?.comment ?? "" }) }
     
     func getUser() {
-        if let uid = Auth.auth().currentUser?.uid {
-            self.userRepository.get(uid: uid).subscribe(onNext: { user in
+        self.accountRepository
+            .getLoginUser()
+            .subscribe(onNext: { user in
                 self.userSubject.onNext(user)
             })
-        }
     }
     
     func updateName(_ name: String) {
@@ -94,21 +92,5 @@ struct ProfileViewModel: ProfileViewModelType, ProfileViewModelInputs, ProfileVi
             }, onError: { error in
                 
             })
-    }
-    
-    private func createStorageUrlObservable(_ path: String) -> Observable<String> {
-        return Observable.create { (subscribe) -> Disposable in
-            guard let path = try? path else {
-                subscribe.onCompleted()
-                return Disposables.create()
-            }
-            
-            Storage.storage().reference(withPath: path).downloadURL { (url: URL?, _) in
-                subscribe.onNext(url?.absoluteString ?? "")
-                subscribe.onCompleted()
-            }
-            
-            return Disposables.create()
-        }
     }
 }

@@ -11,7 +11,10 @@ import RxSwift
 
 struct PartnerListScreen: View {
     
-    private let viewModel = PartnerViewModel(partnerRepository: FirebasePartnerRepository.instance)
+    private let viewModel = PartnerViewModel(
+        accountRepository: FirebaseAccountRepository.instance,
+        partnerRepository: FirebasePartnerRepository.instance
+    )
     private let disposeBag = DisposeBag()
     
     @State var partnerList: Array<Partner> = []

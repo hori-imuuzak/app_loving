@@ -7,7 +7,6 @@
 //
 
 import RxSwift
-import FirebaseAuth
 
 protocol HomeViewModelInputs {
     func createUser()
@@ -41,28 +40,24 @@ struct HomeViewModel: HomeViewModelType, HomeViewModelInputs, HomeViewModelOutpu
         self.userRepository = userRepository
     }
 
-    private var disposeBag = DisposeBag()
     private var userRepository: UserRepository
     
     var inputs: HomeViewModelInputs { return self }
     var outputs: HomeViewModelOutputs { return self }
     
     private var isCreatedSubject = PublishSubject<Bool>()
-    
     var isCreated: Observable<Bool> { return isCreatedSubject }
     
     func createUser() {
-        if let uid = Auth.auth().currentUser?.uid {
-            let user = User(
-                uid: uid,
+        self.userRepository
+            .create(
                 name: "test",
                 comment: "おねだり待ってます！",
                 profileImageUrl: "users/default_user.png",
-                profileCoverUrl: "covers/\(defaultCoverImages.randomElement() ?? defaultCoverImages[0])"
-            )
-            self.userRepository.create(user: user).subscribe(onNext: { user in
+                profileCoverUrl: "covers/\(defaultCoverImages.randomElement() ?? defaultCoverImages[0])")
+            .subscribe(onNext: { user in
                 self.isCreatedSubject.onNext(true)
-            }).disposed(by: self.disposeBag)
-        }
+                self.isCreatedSubject.onCompleted()
+            })
     }
 }

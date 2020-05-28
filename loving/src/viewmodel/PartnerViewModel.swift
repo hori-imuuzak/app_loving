@@ -7,14 +7,15 @@
 //
 
 import RxSwift
-import FirebaseAuth
 
 protocol PartnerViewModelInputs {
     func getPartnerList()
+    func addPartner(to user: User, partner: Partner)
 }
 
 protocol PartnerViewModelOutputs {
     var partners: Observable<Array<Partner>> { get }
+    var isSuccessAddPartner: Observable<Bool> { get }
 }
 
 protocol PartnerViewModelType {
@@ -22,11 +23,12 @@ protocol PartnerViewModelType {
     var outputs: PartnerViewModelOutputs { get }
 }
 
-
 struct PartnerViewModel: PartnerViewModelType, PartnerViewModelInputs, PartnerViewModelOutputs {
+    private var accountRepository: AccountRepository
     private var partnerRepository: PartnerRepository
     
-    init(partnerRepository: PartnerRepository) {
+    init(accountRepository: AccountRepository, partnerRepository: PartnerRepository) {
+        self.accountRepository = accountRepository
         self.partnerRepository = partnerRepository
     }
     
@@ -34,11 +36,21 @@ struct PartnerViewModel: PartnerViewModelType, PartnerViewModelInputs, PartnerVi
     var outputs: PartnerViewModelOutputs { return self }
     
     func getPartnerList() {
-        if let uid = Auth.auth().currentUser?.uid {
-            self.partnerRepository
-                .getList(uid: uid)
-                .subscribe(partnersSubject)
-        }
+        self.accountRepository
+            .getLoginUser()
+            .flatMap { loginUser -> Observable<Array<Partner>> in
+                if let user = loginUser {
+                    return self.partnerRepository
+                        .getList(uid: user.uid)
+                }
+                
+                return Observable.just([] as Array<Partner>)
+            }
+            .subscribe(partnersSubject)
+    }
+    
+    func addPartner(to user: User, partner: Partner) {
+        
     }
     
     private let partnersSubject = PublishSubject<Array<Partner>>()
@@ -46,4 +58,6 @@ struct PartnerViewModel: PartnerViewModelType, PartnerViewModelInputs, PartnerVi
         return partnersSubject.map { $0 }
     }
     
+    private let isSuccessAddPartnerSubject = PublishSubject<Bool>()
+    var isSuccessAddPartner: Observable<Bool> { return isSuccessAddPartnerSubject.map{ $0 } }
 }
