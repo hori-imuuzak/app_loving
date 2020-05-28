@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct SplashView: View {
+struct SplashScreen: View {
     var body: some View {
         VStack {
             Text("Loving")
@@ -22,8 +22,8 @@ struct SplashView: View {
     }
 }
 
-struct SplashView_Previews: PreviewProvider {
+struct SplashScreen_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        SplashScreen()
     }
 }

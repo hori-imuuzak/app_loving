@@ -11,7 +11,7 @@ import SwiftUI
 import URLImage
 import RxSwift
 
-struct ProfileView: View {
+struct ProfileScreen: View {
     
     private let viewModel = ProfileViewModel(
         userRepository: FirebaseUserRepository.instance
@@ -78,9 +78,9 @@ struct ProfileView: View {
 }
 
 #if DEBUG
-struct ProfileView_Preview: PreviewProvider {
+struct ProfileScreen_Preview: PreviewProvider {
     static var previews: some View {
-        ProfileView()
+        ProfileScreen()
     }
 }
 #endif

@@ -10,7 +10,7 @@ import SwiftUI
 import FirebaseAuth
 import RxSwift
 
-struct HomeView: View {
+struct HomeScreen: View {
     private let viewModel = HomeViewModel(
         userRepository: FirebaseUserRepository.instance
     )
@@ -23,7 +23,7 @@ struct HomeView: View {
             if isActive {
                 App()
             } else {
-                SplashView()
+                SplashScreen()
             }
         }.onAppear(perform: {
             let auth = Auth.auth()
@@ -62,7 +62,7 @@ struct App: View {
                         .renderingMode(.template)
                     Text("本日のリクエスト")
                 }
-            PartnerListView()
+            PartnerListScreen()
                 .tabItem {
                     Image("father")
                         .renderingMode(.template)
@@ -74,7 +74,7 @@ struct App: View {
                         .renderingMode(.template)
                     Text("リクエスト")
             }
-            ProfileView()
+            ProfileScreen()
                 .tabItem {
                     Image("settings")
                         .renderingMode(.template)
@@ -85,9 +85,9 @@ struct App: View {
 }
 
 #if DEBUG
-struct HomeView_Preview: PreviewProvider {
+struct HomeScreen_Preview: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        HomeScreen()
     }
 }
 #endif

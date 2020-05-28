@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EditComment: View {
+struct EditCommentScreen: View {
     @Environment(\.presentationMode) var presentation
     
     @State var comment: String = ""
@@ -28,8 +28,8 @@ struct EditComment: View {
     }
 }
 
-struct EditComment_Previews: PreviewProvider {
+struct EditCommentScreen_Previews: PreviewProvider {
     static var previews: some View {
-        EditComment(onSaveComment: {_ in })
+        EditCommentScreen(onSaveComment: {_ in })
     }
 }

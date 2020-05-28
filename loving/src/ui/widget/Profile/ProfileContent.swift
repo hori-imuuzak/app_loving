@@ -29,7 +29,7 @@ struct ProfileContent: View {
             ProfileItemRow(
                 label: "ひとこと",
                 text: self.comment ?? "未設定",
-                destination: AnyView(EditComment(onSaveComment: self.onSaveComment))
+                destination: AnyView(EditCommentScreen(onSaveComment: self.onSaveComment))
             )
             ProfileItemRow(
                 label: "ログイン設定",

@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct EditName: View {
+struct EditNameScreen: View {
     @Environment(\.presentationMode) var presentation
     
     @State var name: String = ""
@@ -28,8 +28,8 @@ struct EditName: View {
     }
 }
 
-struct EditName_Preview: PreviewProvider {
+struct EditNameScreen_Preview: PreviewProvider {
     static var previews: some View {
-        EditName(onSaveName: {_ in })
+        EditNameScreen(onSaveName: {_ in })
     }
 }

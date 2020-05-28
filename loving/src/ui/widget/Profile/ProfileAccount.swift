@@ -79,7 +79,7 @@ struct Account: View {
                         .lineLimit(1)
                         .foregroundColor(Color.white)
                         .shadow(color: Color.black, radius: Const.Shadow, x: 0, y: 0)
-                    NavigationLink(destination: EditName(onSaveName: self.onSaveName)) {
+                    NavigationLink(destination: EditNameScreen(onSaveName: self.onSaveName)) {
                         Text("名前を変更する")
                             .font(.system(size: Const.FontSize.S))
                             .foregroundColor(Color.white)

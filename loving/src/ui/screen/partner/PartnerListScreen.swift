@@ -9,7 +9,7 @@
 import SwiftUI
 import RxSwift
 
-struct PartnerListView: View {
+struct PartnerListScreen: View {
     
     private let viewModel = PartnerViewModel(partnerRepository: FirebasePartnerRepository.instance)
     private let disposeBag = DisposeBag()
@@ -41,8 +41,8 @@ struct PartnerListView: View {
     }
 }
 
-struct PartnerListView_Previews: PreviewProvider {
+struct PartnerListScreen_Previews: PreviewProvider {
     static var previews: some View {
-        PartnerListView()
+        PartnerListScreen()
     }
 }
