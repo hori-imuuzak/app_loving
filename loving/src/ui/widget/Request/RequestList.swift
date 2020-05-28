@@ -36,9 +36,9 @@ struct RequestList: View {
             QGrid(requests, columns: 3, vSpacing: 4, hSpacing: 18, vPadding: 0) { request in
                 NavigationLink(destination: RequestTo(partners: [
                         // TODO
-                        PartnerItem(name: "旦那さん"),
-                        PartnerItem(name: "ママ"),
-                        PartnerItem(name: "息子ちゃん")
+                        PartnerItem(name: "旦那さん", profileImage: "", message: ""),
+                        PartnerItem(name: "ママ", profileImage: "", message: ""),
+                        PartnerItem(name: "息子ちゃん", profileImage: "", message: "")
                     ])
                 ) {
                     RequestItem(request: request)

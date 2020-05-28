@@ -22,7 +22,11 @@ struct RequestTo: View {
                 Text("誰にリクエストしますか？")
                     .font(.system(size: Const.FontSize.L))
                 List(partners) { partner in
-                    PartnerItemRow(name: partner.name)
+                    PartnerItemRow(
+                        name: partner.name,
+                        profileImage: partner.profileImage,
+                        message: partner.message
+                    )
                 }
             }
             .navigationBarTitle("")
@@ -34,9 +38,9 @@ struct RequestTo: View {
 struct RequestTo_Previews: PreviewProvider {
     static var previews: some View {
         RequestTo(partners: [
-            PartnerItem(name: "旦那さん"),
-            PartnerItem(name: "ママ"),
-            PartnerItem(name: "息子ちゃん")
+            PartnerItem(name: "旦那さん", profileImage: "", message: ""),
+            PartnerItem(name: "ママ", profileImage: "", message: ""),
+            PartnerItem(name: "息子ちゃん", profileImage: "", message: "")
         ])
     }
 }

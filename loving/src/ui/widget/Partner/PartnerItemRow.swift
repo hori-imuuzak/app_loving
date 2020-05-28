@@ -8,22 +8,39 @@
 
 import SwiftUI
 import URLImage
+import FirebaseStorage
 
 struct PartnerItem: Identifiable {
     let id = UUID()
     let name: String
+    let profileImage: String
+    let message: String
 }
 
 struct PartnerItemRow: View {
+    @State private var imageUrl: String = ""
+
     var name: String
+    var profileImage: String
     var message: String = ""
     
     var body: some View {
         VStack() {
             Button(action: {}) {
                 HStack() {
-                    URLImage(URL(string: "https://ibb.co/kGTwxbW")!, placeholder: Image("default_user").resizable())
-                    .frame(width: 32, height: 32, alignment: .center)
+                    if self.imageUrl.isEmpty {
+                        Image("default_user")
+                            .resizable()
+                            .frame(width: 32, height: 32, alignment: .center)
+                    } else {
+                        URLImage(URL(string: self.imageUrl)!, placeholder: Image("default_user").resizable()) { proxy in
+                            proxy.image
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipped()
+                        }
+                        .frame(width: 32, height: 32, alignment: .center)
+                    }
                     VStack(alignment: .leading) {
                         Text(self.name)
                         Text(self.message)
@@ -42,6 +59,19 @@ struct PartnerItemRow: View {
         .background(Color.white)
         .clipShape(RoundedRectangle(cornerRadius: Const.CornerRadius))
         .shadow(color: Color.gray, radius: Const.Shadow)
+        .onAppear() {
+            self.loadImage(path: self.profileImage)
+        }
+    }
+    
+    private func loadImage(path: String) {
+        Storage.storage().reference(withPath: path).downloadURL { url, err in
+            if err != nil { return }
+            
+            if let url = url?.absoluteString {
+                self.imageUrl = url
+            }
+        }
     }
 }
 
@@ -49,9 +79,9 @@ struct PartnerItemRow: View {
 struct PartnerItemRow_Preview: PreviewProvider {
     static var previews: some View {
         VStack() {
-            PartnerItemRow(name: "旦那さん")
+            PartnerItemRow(name: "旦那さん", profileImage: "")
             Divider().padding(.top, 16)
-            PartnerItemRow(name: "旦那さん", message: "新着のメッセージがあります")
+            PartnerItemRow(name: "旦那さん", profileImage: "", message: "新着のメッセージがあります")
         }
     }
 }

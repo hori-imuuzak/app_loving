@@ -26,7 +26,11 @@ struct PartnerList: View {
     var body: some View {
         NavigationView {
             List(partners) { partner in
-                PartnerItemRow(name: partner.name)
+                PartnerItemRow(
+                    name: partner.name,
+                    profileImage: partner.profileImage,
+                    message: partner.message
+                )
             }
             .navigationBarTitle(Text("パートナー"))
             .navigationBarItems(trailing:
@@ -50,9 +54,9 @@ struct PartnerList: View {
 struct PartnerList_Previews: PreviewProvider {
     static var previews: some View {
         PartnerList(partners: [
-            PartnerItem(name: "旦那さん"),
-            PartnerItem(name: "ママ"),
-            PartnerItem(name: "息子ちゃん")
+            PartnerItem(name: "旦那さん", profileImage: "", message: ""),
+            PartnerItem(name: "ママ", profileImage: "", message: ""),
+            PartnerItem(name: "息子ちゃん", profileImage: "", message: "")
         ])
     }
 }

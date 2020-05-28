@@ -37,7 +37,7 @@ struct AddPartner: View {
             }.padding(.top, Const.Padding.M)
             if self.isFoundPartner {
                 VStack {
-                    PartnerItemRow(name: "見つけた相手の名前")
+                    PartnerItemRow(name: "見つけた相手の名前", profileImage: "")
                     Button("追加する") {
                         self.addPartner()
                     }.padding(.top, Const.Padding.M)

@@ -26,7 +26,11 @@ struct PartnerListView: View {
     
     private func partnerListToPartnerItemList() -> Array<PartnerItem> {
         return self.partnerList.map { partner in
-            PartnerItem(name: partner.name)
+            PartnerItem(
+                name: partner.name,
+                profileImage: partner.profileImageUrl,
+                message: partner.comment // TODO メッセージに後で変更する
+            )
         }
     }
     
