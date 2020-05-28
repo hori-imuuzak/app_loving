@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import RxSwift
 
 extension Identifiable where Self: Hashable {
     typealias ID = Self
@@ -14,12 +15,14 @@ extension Identifiable where Self: Hashable {
 }
 
 struct PartnerList: View {
-    init(partners: [PartnerItem]) {
+    init(partners: [PartnerItem], onAddedPartner: @escaping () -> Void) {
         self.partners = partners
 
         UITableView.appearance().separatorStyle = .none
+        self.onAddedPartner = onAddedPartner
     }
     
+    var onAddedPartner: () -> Void
     @State private var isShowAddPartnerView = false
 
     var partners: [PartnerItem] = []
@@ -45,8 +48,9 @@ struct PartnerList: View {
                     Image(systemName: "plus")
                 }
                 .sheet(isPresented: self.$isShowAddPartnerView) {
-                    AddPartner(addPartner: {
+                    AddPartnerView(onAddedPartner: {
                         self.isShowAddPartnerView = false
+                        self.onAddedPartner()
                     })
                 }
             )
@@ -60,10 +64,13 @@ struct PartnerList: View {
 
 struct PartnerList_Previews: PreviewProvider {
     static var previews: some View {
-        PartnerList(partners: [
-            PartnerItem(name: "旦那さん", profileImage: "", message: ""),
-            PartnerItem(name: "ママ", profileImage: "", message: ""),
-            PartnerItem(name: "息子ちゃん", profileImage: "", message: "")
-        ])
+        PartnerList(
+            partners: [
+                PartnerItem(name: "旦那さん", profileImage: "", message: ""),
+                PartnerItem(name: "ママ", profileImage: "", message: ""),
+                PartnerItem(name: "息子ちゃん", profileImage: "", message: "")
+            ],
+            onAddedPartner: {}
+        )
     }
 }

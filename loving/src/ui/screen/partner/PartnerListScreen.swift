@@ -20,7 +20,7 @@ struct PartnerListScreen: View {
     @State var partnerList: Array<Partner> = []
     
     var body: some View {
-        PartnerList(partners: self.partnerListToPartnerItemList())
+        PartnerList(partners: self.partnerListToPartnerItemList(), onAddedPartner: self.reloadPartnerList)
         .onAppear() {
             self.viewModel.inputs.getPartnerList()
             self.observe()
@@ -41,6 +41,11 @@ struct PartnerListScreen: View {
         self.viewModel.outputs.partners.subscribe(onNext: { partners in
             self.partnerList = partners
         }).disposed(by: disposeBag)
+    }
+    
+    private func reloadPartnerList() {
+        self.observe()
+        self.viewModel.inputs.getPartnerList()
     }
 }
 

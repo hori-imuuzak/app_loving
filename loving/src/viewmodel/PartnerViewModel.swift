@@ -10,12 +10,13 @@ import RxSwift
 
 protocol PartnerViewModelInputs {
     func getPartnerList()
-    func addPartner(to user: User, partner: Partner)
+    func addPartner(partner: Partner)
 }
 
 protocol PartnerViewModelOutputs {
-    var partners: Observable<Array<Partner>> { get }
-    var isSuccessAddPartner: Observable<Bool> { get }
+    var partners: PublishSubject<Array<Partner>> { get }
+    var foundPartner: PublishSubject<Partner?> { get }
+    var isSuccessAddPartner: PublishSubject<Bool> { get }
 }
 
 protocol PartnerViewModelType {
@@ -35,6 +36,8 @@ struct PartnerViewModel: PartnerViewModelType, PartnerViewModelInputs, PartnerVi
     var inputs: PartnerViewModelInputs { return self }
     var outputs: PartnerViewModelOutputs { return self }
     
+    private var disposeBag = DisposeBag()
+    
     func getPartnerList() {
         self.accountRepository
             .getLoginUser()
@@ -46,18 +49,34 @@ struct PartnerViewModel: PartnerViewModelType, PartnerViewModelInputs, PartnerVi
                 
                 return Observable.just([] as Array<Partner>)
             }
-            .subscribe(partnersSubject)
+            .subscribe(self.partners)
+            .disposed(by: self.disposeBag)
     }
     
-    func addPartner(to user: User, partner: Partner) {
-        
+    func findPartner(uid: String) {
+        self.partnerRepository
+            .find(partnerId: uid)
+            .subscribe(onNext: { partner in
+                self.foundPartner.onNext(partner)
+            })
+            .disposed(by: self.disposeBag)
     }
     
-    private let partnersSubject = PublishSubject<Array<Partner>>()
-    var partners: Observable<Array<Partner>> {
-        return partnersSubject.map { $0 }
+    func addPartner(partner: Partner) {
+        self.accountRepository
+            .getLoginUser()
+            .flatMap { loginUser -> Observable<Partner> in
+                if let user = loginUser {
+                    return self.partnerRepository.add(user: user, partner: partner)
+                }
+                
+                return Observable.just(partner)
+        }.subscribe { _ in
+            self.isSuccessAddPartner.onNext(true)
+        }.disposed(by: self.disposeBag)
     }
     
-    private let isSuccessAddPartnerSubject = PublishSubject<Bool>()
-    var isSuccessAddPartner: Observable<Bool> { return isSuccessAddPartnerSubject.map{ $0 } }
+    let partners = PublishSubject<Array<Partner>>()
+    let foundPartner = PublishSubject<Partner?>()
+    let isSuccessAddPartner = PublishSubject<Bool>()
 }

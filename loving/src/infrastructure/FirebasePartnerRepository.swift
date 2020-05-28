@@ -65,7 +65,7 @@ class FirebasePartnerRepository : PartnerRepository {
         }
     }
     
-    func find(partnerId: String) -> Observable<Partner> {
+    func find(partnerId: String) -> Observable<Partner?> {
         return Observable.create { subscribe -> Disposable in
             FirebaseUser
                 .document(uid: partnerId)
@@ -75,6 +75,7 @@ class FirebasePartnerRepository : PartnerRepository {
                     }
                     
                     guard let doc = snapshot?.data() else {
+                        subscribe.onNext(nil)
                         subscribe.onCompleted()
                         return
                     }
@@ -95,16 +96,27 @@ class FirebasePartnerRepository : PartnerRepository {
     
     func add(user: User, partner: Partner) -> Observable<Partner> {
         return Observable.create { subscribe -> Disposable in
-            let data = ["uid": partner.uid]
+            let partnerDataToUser = ["uid": partner.uid]
+            let userDataToPartner = ["uid": user.uid]
+
+            // userとpartnerで相互にpartners/key/[相手のuid]を作成する
             FirebasePartner
                 .collections(uid: user.uid)
-                .addDocument(data: data) { err in
+                .addDocument(data: partnerDataToUser) { err in
                     if let err = err {
                         subscribe.onError(err)
                     }
                     
-                    subscribe.onNext(partner)
-                    subscribe.onCompleted()
+                    FirebasePartner
+                        .collections(uid: partner.uid)
+                        .addDocument(data: userDataToPartner) { err in
+                            if let err = err {
+                                subscribe.onError(err)
+                            }
+                                
+                            subscribe.onNext(partner)
+                            subscribe.onCompleted()
+                        }
                 }
 
             subscribe.onCompleted()

@@ -58,7 +58,7 @@
 		75D4D88324772187003295CF /* RequestItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88224772187003295CF /* RequestItem.swift */; };
 		75D4D88524772A02003295CF /* RequestList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88424772A02003295CF /* RequestList.swift */; };
 		75D4D88A24773E61003295CF /* RequestTo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88924773E61003295CF /* RequestTo.swift */; };
-		75D4D88C247742AF003295CF /* AddPartner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88B247742AF003295CF /* AddPartner.swift */; };
+		75D4D88C247742AF003295CF /* AddPartnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88B247742AF003295CF /* AddPartnerView.swift */; };
 		75D4D88E24776049003295CF /* UIApplication_ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75D4D88D24776049003295CF /* UIApplication_ext.swift */; };
 /* End PBXBuildFile section */
 
@@ -114,7 +114,7 @@
 		75D4D88224772187003295CF /* RequestItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestItem.swift; sourceTree = "<group>"; };
 		75D4D88424772A02003295CF /* RequestList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestList.swift; sourceTree = "<group>"; };
 		75D4D88924773E61003295CF /* RequestTo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTo.swift; sourceTree = "<group>"; };
-		75D4D88B247742AF003295CF /* AddPartner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPartner.swift; sourceTree = "<group>"; };
+		75D4D88B247742AF003295CF /* AddPartnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPartnerView.swift; sourceTree = "<group>"; };
 		75D4D88D24776049003295CF /* UIApplication_ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication_ext.swift; sourceTree = "<group>"; };
 		AB3E5401D7FBCEA1B0C8540D /* Pods-loving.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loving.debug.xcconfig"; path = "Target Support Files/Pods-loving/Pods-loving.debug.xcconfig"; sourceTree = "<group>"; };
 		FF85B3DA459D09BCCBED7838 /* Pods-loving.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-loving.release.xcconfig"; path = "Target Support Files/Pods-loving/Pods-loving.release.xcconfig"; sourceTree = "<group>"; };
@@ -372,7 +372,7 @@
 			children = (
 				75D4D87B24760332003295CF /* PartnerItemRow.swift */,
 				75D4D87F2476B96D003295CF /* PartnerList.swift */,
-				75D4D88B247742AF003295CF /* AddPartner.swift */,
+				75D4D88B247742AF003295CF /* AddPartnerView.swift */,
 			);
 			path = Partner;
 			sourceTree = "<group>";
@@ -548,7 +548,7 @@
 				75A79C15247E924E00E3E23F /* FormButton.swift in Sources */,
 				75D4D88324772187003295CF /* RequestItem.swift in Sources */,
 				75D4D88A24773E61003295CF /* RequestTo.swift in Sources */,
-				75D4D88C247742AF003295CF /* AddPartner.swift in Sources */,
+				75D4D88C247742AF003295CF /* AddPartnerView.swift in Sources */,
 				75D4D85C24741440003295CF /* SceneDelegate.swift in Sources */,
 				75A79BCF247A403A00E3E23F /* CardStack.swift in Sources */,
 				75A79BE4247A716600E3E23F /* Partner.swift in Sources */,

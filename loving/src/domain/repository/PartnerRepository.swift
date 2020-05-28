@@ -12,7 +12,7 @@ protocol PartnerRepository {
     static var instance: PartnerRepository { get }
 
     func getList(uid: String) -> Observable<Array<Partner>>
-    func find(partnerId: String) -> Observable<Partner>
+    func find(partnerId: String) -> Observable<Partner?>
     func add(user: User, partner: Partner) -> Observable<Partner>
     func remove(user: User, partner: Partner) -> Observable<Partner>
 }
